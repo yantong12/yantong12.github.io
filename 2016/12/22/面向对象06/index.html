@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>面向对象06 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="闭包科里化应用
+案例：
+
+闭包的优缺点
+
+缺点: 常驻内存，增大内存的开销，使用不当就会造成内存泄漏。
+优点：
+缓存
+实现封装性
+避免污染全局对象
+处理逻辑的连续性。
+
+
+
+
+应用
+参数复用
+延迟计算/执行
+提前返回
+
+
+
+
+作用域链：加强变量搜索原则的记忆
+
+绘制作用域链的步骤
+
+全局作用域 为 0 级链。将在当前作用域上的变量、对象等数据，绘制在该链上。
+函数可以限定作用域，在绘制过程中，只要">
+<meta property="og:type" content="article">
+<meta property="og:title" content="面向对象06">
+<meta property="og:url" content="http://yoursite.com/2016/12/22/面向对象06/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="闭包科里化应用
+案例：
+
+闭包的优缺点
+
+缺点: 常驻内存，增大内存的开销，使用不当就会造成内存泄漏。
+优点：
+缓存
+实现封装性
+避免污染全局对象
+处理逻辑的连续性。
+
+
+
+
+应用
+参数复用
+延迟计算/执行
+提前返回
+
+
+
+
+作用域链：加强变量搜索原则的记忆
+
+绘制作用域链的步骤
+
+全局作用域 为 0 级链。将在当前作用域上的变量、对象等数据，绘制在该链上。
+函数可以限定作用域，在绘制过程中，只要">
+<meta property="og:updated_time" content="2016-12-22T06:57:43.285Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="面向对象06">
+<meta name="twitter:description" content="闭包科里化应用
+案例：
+
+闭包的优缺点
+
+缺点: 常驻内存，增大内存的开销，使用不当就会造成内存泄漏。
+优点：
+缓存
+实现封装性
+避免污染全局对象
+处理逻辑的连续性。
+
+
+
+
+应用
+参数复用
+延迟计算/执行
+提前返回
+
+
+
+
+作用域链：加强变量搜索原则的记忆
+
+绘制作用域链的步骤
+
+全局作用域 为 0 级链。将在当前作用域上的变量、对象等数据，绘制在该链上。
+函数可以限定作用域，在绘制过程中，只要">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Zoeken"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-面向对象06" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/12/22/面向对象06/" class="article-date">
+  <time datetime="2016-12-22T06:56:31.000Z" itemprop="datePublished">2016-12-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      面向对象06
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="闭包科里化应用"><a href="#闭包科里化应用" class="headerlink" title="闭包科里化应用"></a>闭包科里化应用</h3><ol>
+<li><p>案例：</p>
+</li>
+<li><p>闭包的优缺点</p>
+<ul>
+<li>缺点: 常驻内存，增大内存的开销，使用不当就会造成内存泄漏。</li>
+<li>优点：<ul>
+<li>缓存</li>
+<li>实现封装性</li>
+<li>避免污染全局对象</li>
+<li>处理逻辑的连续性。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>应用<ul>
+<li>参数复用</li>
+<li>延迟计算/执行</li>
+<li>提前返回</li>
+</ul>
+</li>
+</ol>
+<ol>
+<li><p>作用域链：加强变量搜索原则的记忆</p>
+</li>
+<li><p>绘制作用域链的步骤</p>
+<ul>
+<li>全局作用域 为 0 级链。将在当前作用域上的变量、对象等数据，绘制在该链上。</li>
+<li>函数可以限定作用域，在绘制过程中，只要遇到函数，就在此基础上扩展一条新俩链，级别为 当前级别 + 1；</li>
+<li>重复2步骤，直到所有函数都扩展出了新链为止。</li>
+</ul>
+</li>
+<li><p>在变量搜索的时候，如果访问的是全局变量，那么会搜索整个作用域链。性能会降低。在实际开发时，可以将常用的全局对象<br> 传入局部变量内。<br> 在同级链上的变量，互相不能访问。</p>
+</li>
+<li><p>函数四种调用模式</p>
+<ul>
+<li>作用：确定this执向的</li>
+<li>普通函数执行模式：声明一个函数后，直接通过函数的名字调用。</li>
+</ul>
+</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	<span class="built_in">console</span>.log(<span class="keyword">this</span>); <span class="comment">// this -&gt; window</span></div><div class="line">&#125;</div><div class="line">foo(); <span class="comment">// 普通函数执行模式</span></div></pre></td></tr></table></figure>
+<pre><code>+ 构造函数模式： 通过 new 操作符 创建一个对象，此时该函数的执行模式为 构造函数模式
+</code></pre><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	<span class="built_in">console</span>.log(<span class="keyword">this</span>); <span class="comment">// this -&gt; 构造函数创建出来的对象</span></div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> f = <span class="keyword">new</span> fn; <span class="comment">// 构造函数执行模式</span></div><div class="line"><span class="keyword">var</span> ff = <span class="keyword">new</span> fn;</div></pre></td></tr></table></figure>
+<pre><code>+ 方法调用模式：通过对象来调用
+</code></pre><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> o = &#123;<span class="attr">say</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	<span class="built_in">console</span>.log(<span class="keyword">this</span>); <span class="comment">// this -&gt; 方法的调用者， 即对象o。</span></div><div class="line">&#125;&#125;;</div><div class="line">o.say(); <span class="comment">// 方法调用模式</span></div></pre></td></tr></table></figure>
+<pre><code>+ 上下文模式(call/apply模式):
+    - 作用：动态改变this的指向
+    - this -&gt; call|apply方法的第一个参数 
+</code></pre><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">print</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	<span class="built_in">console</span>.log(<span class="keyword">this</span>.name);</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> obj = &#123;<span class="attr">name</span>: <span class="string">"tom"</span>&#125;;</div><div class="line">print.call(obj); <span class="comment">// tom</span></div></pre></td></tr></table></figure>
+<ol>
+<li><p>call和apply的区别</p>
+<ul>
+<li><p>fn.call(thisObj, arg1, arg2, arg3, …argN);</p>
+<ul>
+<li>thisObj                             在fn函数内部的this指向（必需）</li>
+<li>arg1, arg2, arg3, …argN     函数fn在执行时，传入的实参。（可选）</li>
+</ul>
+</li>
+<li><p>fn.apply(thisObj, [array]);</p>
+<ul>
+<li>thisObj                             在fn函数内部的this指向（必需）</li>
+<li>数组对象                             将数组的所有元素值当做fn执行时的实参。（可选）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>上下文模式应用</p>
+<ul>
+<li><p>借用方法</p>
+<ul>
+<li>数组合并</li>
+<li>借用Math对象方法</li>
+<li>获取对象类型</li>
+<li>实现伪数组对象转换为真数组</li>
+</ul>
+</li>
+<li><p>实现借用构造函数继承</p>
+</li>
+</ul>
+</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name, age, gender, high</span>) </span>&#123;</div><div class="line">	<span class="keyword">this</span>.name = name;</div><div class="line">	<span class="keyword">this</span>.age = age;</div><div class="line">	<span class="keyword">this</span>.gender = gender;</div><div class="line">	<span class="keyword">this</span>.high = high;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Teacher</span>(<span class="params">name, age, gender, high, codeNo, cellphoneNo</span>) </span>&#123;</div><div class="line">	Person.apply(<span class="keyword">this</span>, <span class="built_in">Array</span>.prototype.slice.call(<span class="built_in">arguments</span>, <span class="number">0</span>, <span class="number">4</span>));</div><div class="line">	<span class="keyword">this</span>.codeNo = codeNo;</div><div class="line">	<span class="keyword">this</span>.cellphoneNo = cellphoneNo;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> t = <span class="keyword">new</span> Teacher(<span class="string">'guojing'</span>, <span class="number">18</span>, <span class="string">'boy'</span>, <span class="string">'226'</span>, <span class="string">'91248'</span>, <span class="string">'13813813811'</span>);</div><div class="line"><span class="built_in">console</span>.log(t);</div></pre></td></tr></table></figure>
+<pre><code>+ 改变this指向
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/12/22/面向对象06/" data-id="cix01k5t4000a5cr77htphw8d" class="article-share-link">Delen</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/12/22/面向对象07/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Nieuwer</strong>
+      <div class="article-nav-title">
+        
+          面向对象07
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/12/22/面向对象05/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ouder</strong>
+      <div class="article-nav-title">面向对象05</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archieven</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recente berichten</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/12/22/面向对象07/">面向对象07</a>
+          </li>
+        
+          <li>
+            <a href="/2016/12/22/面向对象06/">面向对象06</a>
+          </li>
+        
+          <li>
+            <a href="/2016/12/22/面向对象05/">面向对象05</a>
+          </li>
+        
+          <li>
+            <a href="/2016/12/22/面向对象04/">面向对象04</a>
+          </li>
+        
+          <li>
+            <a href="/2016/12/22/面向对象03/">面向对象03</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

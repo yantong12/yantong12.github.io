@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>面向对象04 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="delete
+
+可以删除对象的指定属性
+注意 在操作DOM对象时，只能删除通过”.”或”[]”,方式添加的自定义属性。
+
+
+arguments 伪数组对象，用于存储实参
+
+arguments.callee: 返回正在执行的函数。
+length: 存储实参的个数
+
+用途：可以用在 不定项形参个数 的 函数实现
+
+函数没有重载，可以用arguments模拟函数重载
+
+
+构造函数的执行过程
+
+先创建一">
+<meta property="og:type" content="article">
+<meta property="og:title" content="面向对象04">
+<meta property="og:url" content="http://yoursite.com/2016/12/22/面向对象04/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="delete
+
+可以删除对象的指定属性
+注意 在操作DOM对象时，只能删除通过”.”或”[]”,方式添加的自定义属性。
+
+
+arguments 伪数组对象，用于存储实参
+
+arguments.callee: 返回正在执行的函数。
+length: 存储实参的个数
+
+用途：可以用在 不定项形参个数 的 函数实现
+
+函数没有重载，可以用arguments模拟函数重载
+
+
+构造函数的执行过程
+
+先创建一">
+<meta property="og:updated_time" content="2016-12-22T06:54:17.880Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="面向对象04">
+<meta name="twitter:description" content="delete
+
+可以删除对象的指定属性
+注意 在操作DOM对象时，只能删除通过”.”或”[]”,方式添加的自定义属性。
+
+
+arguments 伪数组对象，用于存储实参
+
+arguments.callee: 返回正在执行的函数。
+length: 存储实参的个数
+
+用途：可以用在 不定项形参个数 的 函数实现
+
+函数没有重载，可以用arguments模拟函数重载
+
+
+构造函数的执行过程
+
+先创建一">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Zoeken"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-面向对象04" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/12/22/面向对象04/" class="article-date">
+  <time datetime="2016-12-22T06:53:50.000Z" itemprop="datePublished">2016-12-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      面向对象04
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ol>
+<li><p>delete</p>
+<ul>
+<li>可以删除对象的指定属性</li>
+<li>注意 在操作DOM对象时，只能删除通过”.”或”[]”,方式添加的自定义属性。</li>
+</ul>
+</li>
+<li><p>arguments 伪数组对象，用于存储实参</p>
+<ul>
+<li>arguments.callee: 返回正在执行的函数。</li>
+<li><p>length: 存储实参的个数</p>
+</li>
+<li><p>用途：可以用在 不定项形参个数 的 函数实现</p>
+</li>
+<li>函数没有重载，可以用arguments模拟函数重载</li>
+</ul>
+</li>
+<li><p>构造函数的执行过程</p>
+<ul>
+<li>先创建一个空对象；</li>
+<li>将构造函数的作用域 交给 上述对象 || this -&gt; 空对象</li>
+<li>开始执行构造函数内部代码</li>
+<li><p>return this;</p>
+</li>
+<li><p>注意：在构造函数中，如果显式 返回一个 基本数据类型 数据 会被忽略掉。当然返回对象就不会。</p>
+</li>
+</ul>
+</li>
+<li><p>大表哥案例–看页面 </p>
+</li>
+<li><p>实例成员 与 静态成员</p>
+<ul>
+<li>实例成员：通过构造函数创建出来的对象上的成员，称为实例成员</li>
+<li><p>静态成员：函数对象上的成员，被称为静态成员</p>
+</li>
+<li><p>区别：实例成员必须先创建实例，在访问；而静态成员直接通过函数的名字即可访问。</p>
+</li>
+<li>在实际开发时，如果遇到工具类方法，此时可以考虑写成 静态成员。</li>
+<li>静态成员 相对于 实例成员 好处为：不需要创建对象，直接通过函数名字来访问成员。</li>
+</ul>
+</li>
+<li><p>递归：函数调用自己。</p>
+<ul>
+<li>场景：在遍历 树形结构 时，优先考虑使用递归方式。</li>
+<li>摸索规律，找到一个简单的方式 来解决 复杂问题 。</li>
+</ul>
+</li>
+<li><p>词法作用域</p>
+<ul>
+<li>全局作用域</li>
+<li><p>局部作用域</p>
+</li>
+<li><p>全局变量</p>
+</li>
+<li><p>局部变量</p>
+</li>
+<li><p>定义：<br>变量的作用域 是由代码 书写的位置决定 而不是 变量被使用的位置决定；<br>只有函数可以限定作用域。</p>
+</li>
+</ul>
+</li>
+<li><p>js中预解析</p>
+<ul>
+<li>词法分析: 在此阶段 如果代码有语法错误会直接抛出异常。</li>
+<li>变量名提升 和 函数名提升</li>
+</ul>
+</li>
+<li><p>in</p>
+<ul>
+<li>语法： in 左边的操作数必须为 字符串类型 ，表示属性的名字，<br>如果不是，会尝试将其转换成字符串，如果失败了，就报错。<br>右边的操作数 为 对象。不为对象，报错。</li>
+<li>含义：判断对象是否能访问到该属性，如果能，就返回true，否则返回false。</li>
+</ul>
+</li>
+<li><p>声明的全局变量都是 window对象的属性</p>
+</li>
+<li><p>函数的名字 存储的是 函数对象的地址</p>
+</li>
+<li><p>闭包的概念: 就是 可以访问其他函数内部数据 的 函数。</p>
+<ul>
+<li>在js中，函数内部的数据在外部无法访问。</li>
+<li>为了访问到函数内部的数据，提出闭包技术。</li>
+</ul>
+</li>
+<li><p>垃圾回收机制</p>
+<ul>
+<li><p>引用计数：变量默认 计数为0，如果有其他数据 对其 有使用，就引用计数 + 1；<br>  如果 对该变量使用的数据 释放掉了， 那么此时引用计数 - 1；<br>  在一定周期后，如果变量引用计数为0，就将其回收掉。</p>
+</li>
+<li><p>标记清除: 如果变量 进入了 一个执行环境 此时该变量 被标记为 不可回收；<br>  如果变量 出了 执行环境 此时该变量 被标记为 可回收。<br>  在一定周期后，如果变量被标记为 可回收，就将其回收掉。<br>  <strong>从文档的根节点 尝试找一条路径 可以到达变量。如果找到了，就将该变量标记为 不可回收</strong><br>  <strong>否则标记为 可回收</strong></p>
+<p>+ </p>
+</li>
+</ul>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/12/22/面向对象04/" data-id="cix01k5tr000c5cr7rbh11k2x" class="article-share-link">Delen</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/12/22/面向对象05/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Nieuwer</strong>
+      <div class="article-nav-title">
+        
+          面向对象05
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/12/22/面向对象03/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ouder</strong>
+      <div class="article-nav-title">面向对象03</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archieven</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recente berichten</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/12/22/面向对象07/">面向对象07</a>
+          </li>
+        
+          <li>
+            <a href="/2016/12/22/面向对象06/">面向对象06</a>
+          </li>
+        
+          <li>
+            <a href="/2016/12/22/面向对象05/">面向对象05</a>
+          </li>
+        
+          <li>
+            <a href="/2016/12/22/面向对象04/">面向对象04</a>
+          </li>
+        
+          <li>
+            <a href="/2016/12/22/面向对象03/">面向对象03</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

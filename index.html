@@ -1,0 +1,2061 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Hexo">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Zoeken"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main">
+  
+    <article id="post-面向对象07" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/12/22/面向对象07/" class="article-date">
+  <time datetime="2016-12-22T06:58:00.000Z" itemprop="datePublished">2016-12-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/12/22/面向对象07/">面向对象07</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="严格模式"><a href="#严格模式" class="headerlink" title="严格模式"></a>严格模式</h1><h2 id="目的"><a href="#目的" class="headerlink" title="目的"></a>目的</h2><ol>
+<li>消除JavaScript语法的一些不合理、不严谨之处，减少一些怪异行为；</li>
+<li>消除代码运行的一些不安全之处，保证代码运行的安全；</li>
+<li>提高编译效率，增加运行效率；</li>
+<li>为未来新版本的JavaScript做好铺垫。</li>
+</ol>
+<h2 id="严格模式标记"><a href="#严格模式标记" class="headerlink" title="严格模式标记"></a>严格模式标记</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">"use strict"</span>;</div></pre></td></tr></table></figure>
+<p>在老版本浏览器会将其当做一行普通字符串忽略。</p>
+<h2 id="使用模式"><a href="#使用模式" class="headerlink" title="使用模式"></a>使用模式</h2><h3 id="针对整个脚本文件"><a href="#针对整个脚本文件" class="headerlink" title="针对整个脚本文件"></a>针对整个脚本文件</h3><p>将”use strict;”放在脚本文件的第一行，则整个脚本将以“严格模式”运行。如果此语句不放在第一行，则无效，整个脚本以“正常模式”运行。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">&lt;script&gt;</div><div class="line">　　<span class="string">"use strict"</span>;</div><div class="line">　　<span class="built_in">console</span>.log(<span class="string">"这是严格模式。"</span>);</div><div class="line"><span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div><div class="line">&lt;script&gt;</div><div class="line">　　<span class="built_in">console</span>.log(<span class="string">"这是正常模式。"</span>);</div><div class="line">	<span class="string">"use strict"</span>;</div><div class="line"><span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></div></pre></td></tr></table></figure>
+<h3 id="针对单个函数"><a href="#针对单个函数" class="headerlink" title="针对单个函数"></a>针对单个函数</h3><p>将”use strict;”放在函数体的第一行，则整个函数以”严格模式”运行。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">strict</span>(<span class="params"></span>) </span>&#123;</div><div class="line"><span class="meta">	"use strict"</span>;</div><div class="line">	<span class="built_in">console</span>.log(<span class="string">"这是严格模式。"</span>);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">noStrict</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	<span class="built_in">console</span>.log(<span class="string">"这是正常模式。"</span>);</div><div class="line">	<span class="string">"use strict"</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="脚本文件的变通写法"><a href="#脚本文件的变通写法" class="headerlink" title="脚本文件的变通写法"></a>脚本文件的变通写法</h3><p>由于第一种方式不利于文件合并，所以最好的做法是：将整个脚本文件放在一个沙箱模式（立即执行的匿名函数）中。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">(<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line"><span class="meta">	"use strict"</span>;</div><div class="line">	<span class="comment">// 代码块</span></div><div class="line">&#125;());</div></pre></td></tr></table></figure>
+<h2 id="语法以及行为变化"><a href="#语法以及行为变化" class="headerlink" title="语法以及行为变化"></a>语法以及行为变化</h2><p>严格模式下，对JavaScript的语法和行为，都做一些变化。</p>
+<h3 id="全局变量的隐式声明"><a href="#全局变量的隐式声明" class="headerlink" title="全局变量的隐式声明"></a>全局变量的隐式声明</h3><p>在正常模式中，如果一个变量没有声明就赋值，默认是全局变量。但是在严格模式已禁止这种用法，全局变量必须显式声明。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">"use strict"</span>;</div><div class="line">v = <span class="number">1</span>; <span class="comment">// 报错，v is not defined。</span></div><div class="line"><span class="comment">// 在严格模式下，变量必须先使用var定义，在赋值。</span></div></pre></td></tr></table></figure>
+<h3 id="静态绑定"><a href="#静态绑定" class="headerlink" title="静态绑定"></a>静态绑定</h3><p>JavaScript语言一个特点，就是允许”动态绑定”，即某些属性和方法到底属于哪一个对象，不是在编译时确定的，而是在运行时确定的。</p>
+<p>严格模式对动态绑定做一些限制。某些情况下，只允许静态绑定。也就是说，属性和方法到底归属哪个对象，在编译阶段就确定。这样做有利于编译效率的提高，也使代码更易阅读，更少出现bug。</p>
+<p>详细涉及以下几方面：</p>
+<p>1.禁止使用with语句</p>
+<p>由于with语句无法再编译阶段就确定 属性到底归属哪个对象</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">"use strict"</span>;</div><div class="line"><span class="keyword">var</span> v = <span class="number">1</span>;</div><div class="line"><span class="comment">// 报错，语法异常</span></div><div class="line"><span class="keyword">with</span>(o)&#123;</div><div class="line">	v = <span class="number">2</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>2.eval作用域</p>
+<p>正常模式，JavaScript语言具有两种变量作用域：全局作用域 和 函数作用域（局部作用域）。<br>严格模式，具有第三种作用域：eval作用域。</p>
+<p>正常模式下，eval语句的作用域取决于 它处于全局作用域，还是函数作用域。<br>严格模式下，eval语句本身就是一个作用域，不再能够产生全局变量，其所生产的变量只能用于eval内部。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">"use strict"</span>;</div><div class="line"><span class="keyword">var</span> x = <span class="number">2</span>;</div><div class="line"><span class="built_in">console</span>.log(<span class="built_in">eval</span>(<span class="string">"var x = 3; x"</span>)); <span class="comment">// 3</span></div><div class="line"><span class="built_in">console</span>.log(x); <span class="comment">// 2</span></div></pre></td></tr></table></figure>
+<p>3.增强安全性</p>
+<ul>
+<li>在普通函数执行模式下，禁止this关键字指向全局对象.</li>
+<li>因此，使用构造函数时，忘记new，this不再指向window对象，而是报错。就不会意外给window对象添加属性或方法。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	<span class="built_in">console</span>.log(<span class="keyword">this</span>);<span class="comment">// window</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</div><div class="line"><span class="meta">	"use strict"</span>;</div><div class="line">	<span class="built_in">console</span>.log(<span class="keyword">this</span>); <span class="comment">// undefined</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</div><div class="line"><span class="meta">	"use strict"</span>;</div><div class="line">	<span class="keyword">this</span>.name = <span class="string">"tom"</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> f = foo(); <span class="comment">// 报错</span></div></pre></td></tr></table></figure>
+<p>4.禁止在函数内部访问caller以及arguments</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123;</div><div class="line"><span class="meta">	"use strict"</span>;</div><div class="line">	fn.caller;	  <span class="comment">// 报错</span></div><div class="line">	fn.arguments; <span class="comment">// 报错</span></div><div class="line">&#125;</div><div class="line">fn();</div></pre></td></tr></table></figure>
+<p>5.禁止删除变量</p>
+<p>在严格模式下无法删除变量。只有configurable设置为true的对象属性，才能被删除。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="meta">"use strict"</span>;</div><div class="line"><span class="keyword">var</span> x;</div><div class="line"><span class="keyword">delete</span> x; <span class="comment">// 报错</span></div><div class="line"><span class="keyword">var</span> o = <span class="built_in">Object</span>.create(<span class="literal">null</span>, &#123;</div><div class="line">	<span class="string">"x"</span>: &#123;</div><div class="line">		<span class="attr">value</span>: <span class="number">10</span>,</div><div class="line">		<span class="attr">configurable</span>: <span class="literal">true</span></div><div class="line">	&#125;</div><div class="line">&#125;);</div><div class="line"><span class="keyword">delete</span> o.x; <span class="comment">// success</span></div></pre></td></tr></table></figure>
+<p>6.显式报错</p>
+<ul>
+<li>在正常模式下，为一个对象的只读属性进行赋值，不会报错，只会默默的失败。<br>而严格模式下，会抛出异常。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">"use strict"</span>;</div><div class="line"><span class="keyword">var</span> o = &#123;&#125;;</div><div class="line"><span class="built_in">Object</span>.defineProperty(o, <span class="string">"v"</span>, &#123; <span class="attr">value</span>: <span class="number">1</span>, <span class="attr">writable</span>: <span class="literal">false</span> &#125;);</div><div class="line">o.v = <span class="number">2</span>; <span class="comment">// 报错</span></div></pre></td></tr></table></figure>
+<ul>
+<li>严格模式下，对一个使用getter方法读取的属性进行赋值，会报错。</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&quot;use strict&quot;;</div><div class="line">var o = &#123;</div><div class="line">	get v() &#123; return 1; &#125;</div><div class="line">&#125;;</div><div class="line">o.v = 2; // 报错</div></pre></td></tr></table></figure>
+<ul>
+<li>严格模式下，对禁止扩展的对象添加新属性，会报错。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">"use strict"</span>;</div><div class="line"><span class="keyword">var</span> o = &#123;&#125;;</div><div class="line"><span class="built_in">Object</span>.preventExtensions(o);</div><div class="line">o.v = <span class="number">1</span>; <span class="comment">// 报错</span></div></pre></td></tr></table></figure>
+<ul>
+<li>严格模式下，删除一个不可删除的属性，会报错。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">"use strict"</span>;</div><div class="line"><span class="keyword">delete</span> <span class="built_in">Object</span>.prototype; <span class="comment">// 报错</span></div></pre></td></tr></table></figure>
+<p>7.重名错误: 严格模式新增了一些语法错误。</p>
+<ul>
+<li>对象不能有重名的属性<br>正常模式下，如果对象有多个重名属性，最后赋值的那个属性会覆盖前面的值。严格模式下，这属于语法错误。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="meta">"use strict"</span>;</div><div class="line"><span class="keyword">var</span> o = &#123;</div><div class="line">	<span class="attr">p</span>: <span class="number">1</span>,</div><div class="line">	<span class="attr">p</span>: <span class="number">2</span></div><div class="line">&#125;; <span class="comment">// 语法错误</span></div></pre></td></tr></table></figure>
+<ul>
+<li>函数不能有重名的参数<br>正常模式下，如果函数有多个重名的参数，可以用arguments[i]读取。严格模式下，这属于语法错误。</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="meta">"use strict"</span>;</div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params">a, a, b</span>) </span>&#123; <span class="comment">// 语法错误</span></div><div class="line">	<span class="keyword">return</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>8.禁止八进制表示法<br>正常模式下，整数的第一位如果是0，表示这是八进制数，比如0100等于十进制的64。严格模式禁止这种表示法，整数第一位为0，将报错。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="meta">"use strict"</span>;</div><div class="line"><span class="keyword">var</span> n = <span class="number">0100</span>; <span class="comment">// 语法错误</span></div></pre></td></tr></table></figure>
+<h3 id="arguments对象的限制"><a href="#arguments对象的限制" class="headerlink" title="arguments对象的限制"></a>arguments对象的限制</h3><p>arguments是函数的参数对象，严格模式对它的使用做了限制。<br>1.不允许对arguments赋值</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="meta">"use strict"</span>;</div><div class="line"><span class="built_in">arguments</span>++; <span class="comment">// 语法错误</span></div><div class="line"><span class="keyword">var</span> obj = &#123; set p(<span class="built_in">arguments</span>) &#123; &#125; &#125;; <span class="comment">// 语法错误</span></div><div class="line"><span class="keyword">try</span> &#123; &#125; <span class="keyword">catch</span> (<span class="built_in">arguments</span>) &#123; &#125; <span class="comment">// 语法错误</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">arguments</span>(<span class="params"></span>) </span>&#123; &#125; <span class="comment">// 语法错误</span></div><div class="line"><span class="keyword">var</span> f = <span class="keyword">new</span> <span class="built_in">Function</span>(<span class="string">"arguments"</span>, <span class="string">"'use strict'; return 17;"</span>); <span class="comment">// 语法错误</span></div></pre></td></tr></table></figure>
+<p>2.arguments不再追踪参数的变化</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params">a</span>) </span>&#123;</div><div class="line">	a = <span class="number">2</span>;</div><div class="line">	<span class="keyword">return</span> [a, <span class="built_in">arguments</span>[<span class="number">0</span>]];</div><div class="line">&#125;</div><div class="line">f(<span class="number">1</span>); <span class="comment">// 正常模式为[2,2]</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params">a</span>) </span>&#123;</div><div class="line"><span class="meta">	"use strict"</span>;</div><div class="line">	a = <span class="number">2</span>;</div><div class="line">	<span class="keyword">return</span> [a, <span class="built_in">arguments</span>[<span class="number">0</span>]];</div><div class="line">&#125;</div><div class="line">f(<span class="number">1</span>); <span class="comment">// 严格模式为[2,1]</span></div></pre></td></tr></table></figure>
+<p>3.禁止使用arguments.callee<br>这意味着，无法在匿名函数内部调用自身了。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">"use strict"</span>;</div><div class="line"><span class="keyword">var</span> f = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123; <span class="keyword">return</span> <span class="built_in">arguments</span>.callee; &#125;;</div><div class="line">f(); <span class="comment">// 报错</span></div></pre></td></tr></table></figure>
+<h3 id="函数必须声明在顶层"><a href="#函数必须声明在顶层" class="headerlink" title="函数必须声明在顶层"></a>函数必须声明在顶层</h3><p>将来Javascript的新版本会引入”块级作用域”。为了与新版本接轨，严格模式只允许在全局作用域或函数作用域的顶层声明函数。也就是说，不允许在非函数的代码块内声明函数。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="meta">"use strict"</span>;</div><div class="line"><span class="keyword">if</span> (<span class="literal">true</span>) &#123;</div><div class="line">	<span class="function"><span class="keyword">function</span> <span class="title">f</span>(<span class="params"></span>) </span>&#123; &#125; <span class="comment">// 语法错误</span></div><div class="line">&#125;</div><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; <span class="number">5</span>; i++) &#123;</div><div class="line">	<span class="function"><span class="keyword">function</span> <span class="title">f2</span>(<span class="params"></span>) </span>&#123; &#125; <span class="comment">// 语法错误</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="保留字"><a href="#保留字" class="headerlink" title="保留字"></a>保留字</h3><p>为了向将来Javascript的新版本过渡，严格模式新增了一些保留字：implements, interface, let, package, private, protected, public, static, yield。<br>使用这些词作为变量名将会报错。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">package</span>(<span class="params">protected</span>) </span>&#123; <span class="comment">// 语法错误</span></div><div class="line"><span class="meta">	"use strict"</span>;</div><div class="line">	<span class="keyword">var</span> implements; <span class="comment">// 语法错误</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>此外，ECMAscript第五版本身还规定了另一些保留字（class, enum, export, extends, import, super），以及各大浏览器自行增加的const保留字，也是不能作为变量名的。</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/12/22/面向对象07/" data-id="cix01k5y6000d5cr79e0mxxho" class="article-share-link">Delen</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-面向对象06" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/12/22/面向对象06/" class="article-date">
+  <time datetime="2016-12-22T06:56:31.000Z" itemprop="datePublished">2016-12-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/12/22/面向对象06/">面向对象06</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="闭包科里化应用"><a href="#闭包科里化应用" class="headerlink" title="闭包科里化应用"></a>闭包科里化应用</h3><ol>
+<li><p>案例：</p>
+</li>
+<li><p>闭包的优缺点</p>
+<ul>
+<li>缺点: 常驻内存，增大内存的开销，使用不当就会造成内存泄漏。</li>
+<li>优点：<ul>
+<li>缓存</li>
+<li>实现封装性</li>
+<li>避免污染全局对象</li>
+<li>处理逻辑的连续性。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>应用<ul>
+<li>参数复用</li>
+<li>延迟计算/执行</li>
+<li>提前返回</li>
+</ul>
+</li>
+</ol>
+<ol>
+<li><p>作用域链：加强变量搜索原则的记忆</p>
+</li>
+<li><p>绘制作用域链的步骤</p>
+<ul>
+<li>全局作用域 为 0 级链。将在当前作用域上的变量、对象等数据，绘制在该链上。</li>
+<li>函数可以限定作用域，在绘制过程中，只要遇到函数，就在此基础上扩展一条新俩链，级别为 当前级别 + 1；</li>
+<li>重复2步骤，直到所有函数都扩展出了新链为止。</li>
+</ul>
+</li>
+<li><p>在变量搜索的时候，如果访问的是全局变量，那么会搜索整个作用域链。性能会降低。在实际开发时，可以将常用的全局对象<br> 传入局部变量内。<br> 在同级链上的变量，互相不能访问。</p>
+</li>
+<li><p>函数四种调用模式</p>
+<ul>
+<li>作用：确定this执向的</li>
+<li>普通函数执行模式：声明一个函数后，直接通过函数的名字调用。</li>
+</ul>
+</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	<span class="built_in">console</span>.log(<span class="keyword">this</span>); <span class="comment">// this -&gt; window</span></div><div class="line">&#125;</div><div class="line">foo(); <span class="comment">// 普通函数执行模式</span></div></pre></td></tr></table></figure>
+<pre><code>+ 构造函数模式： 通过 new 操作符 创建一个对象，此时该函数的执行模式为 构造函数模式
+</code></pre><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	<span class="built_in">console</span>.log(<span class="keyword">this</span>); <span class="comment">// this -&gt; 构造函数创建出来的对象</span></div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> f = <span class="keyword">new</span> fn; <span class="comment">// 构造函数执行模式</span></div><div class="line"><span class="keyword">var</span> ff = <span class="keyword">new</span> fn;</div></pre></td></tr></table></figure>
+<pre><code>+ 方法调用模式：通过对象来调用
+</code></pre><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> o = &#123;<span class="attr">say</span>: <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	<span class="built_in">console</span>.log(<span class="keyword">this</span>); <span class="comment">// this -&gt; 方法的调用者， 即对象o。</span></div><div class="line">&#125;&#125;;</div><div class="line">o.say(); <span class="comment">// 方法调用模式</span></div></pre></td></tr></table></figure>
+<pre><code>+ 上下文模式(call/apply模式):
+    - 作用：动态改变this的指向
+    - this -&gt; call|apply方法的第一个参数 
+</code></pre><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">print</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	<span class="built_in">console</span>.log(<span class="keyword">this</span>.name);</div><div class="line">&#125;</div><div class="line"><span class="keyword">var</span> obj = &#123;<span class="attr">name</span>: <span class="string">"tom"</span>&#125;;</div><div class="line">print.call(obj); <span class="comment">// tom</span></div></pre></td></tr></table></figure>
+<ol>
+<li><p>call和apply的区别</p>
+<ul>
+<li><p>fn.call(thisObj, arg1, arg2, arg3, …argN);</p>
+<ul>
+<li>thisObj                             在fn函数内部的this指向（必需）</li>
+<li>arg1, arg2, arg3, …argN     函数fn在执行时，传入的实参。（可选）</li>
+</ul>
+</li>
+<li><p>fn.apply(thisObj, [array]);</p>
+<ul>
+<li>thisObj                             在fn函数内部的this指向（必需）</li>
+<li>数组对象                             将数组的所有元素值当做fn执行时的实参。（可选）</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>上下文模式应用</p>
+<ul>
+<li><p>借用方法</p>
+<ul>
+<li>数组合并</li>
+<li>借用Math对象方法</li>
+<li>获取对象类型</li>
+<li>实现伪数组对象转换为真数组</li>
+</ul>
+</li>
+<li><p>实现借用构造函数继承</p>
+</li>
+</ul>
+</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name, age, gender, high</span>) </span>&#123;</div><div class="line">	<span class="keyword">this</span>.name = name;</div><div class="line">	<span class="keyword">this</span>.age = age;</div><div class="line">	<span class="keyword">this</span>.gender = gender;</div><div class="line">	<span class="keyword">this</span>.high = high;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Teacher</span>(<span class="params">name, age, gender, high, codeNo, cellphoneNo</span>) </span>&#123;</div><div class="line">	Person.apply(<span class="keyword">this</span>, <span class="built_in">Array</span>.prototype.slice.call(<span class="built_in">arguments</span>, <span class="number">0</span>, <span class="number">4</span>));</div><div class="line">	<span class="keyword">this</span>.codeNo = codeNo;</div><div class="line">	<span class="keyword">this</span>.cellphoneNo = cellphoneNo;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> t = <span class="keyword">new</span> Teacher(<span class="string">'guojing'</span>, <span class="number">18</span>, <span class="string">'boy'</span>, <span class="string">'226'</span>, <span class="string">'91248'</span>, <span class="string">'13813813811'</span>);</div><div class="line"><span class="built_in">console</span>.log(t);</div></pre></td></tr></table></figure>
+<pre><code>+ 改变this指向
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/12/22/面向对象06/" data-id="cix01k5t4000a5cr77htphw8d" class="article-share-link">Delen</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-面向对象05" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/12/22/面向对象05/" class="article-date">
+  <time datetime="2016-12-22T06:54:28.000Z" itemprop="datePublished">2016-12-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/12/22/面向对象05/">面向对象05</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ol>
+<li><p>作用域种类</p>
+<ul>
+<li>弱类型语言：大部分为 静态作用域</li>
+<li>强类型语言：动态作用域</li>
+</ul>
+</li>
+<li><p>函数声明最好不要放在if语句块内部。</p>
+<ul>
+<li>在现代浏览器 不会 将函数声明提升</li>
+<li>在早期浏览器 会 得到 提升。</li>
+</ul>
+</li>
+<li><p>当一个匿名函数 作为某个对象的属性值时， 在其内部 只有使用 arguments.callee 来获取 函数</p>
+</li>
+<li><p>闭包的作用</p>
+<ul>
+<li>计数器</li>
+<li>沙箱模式–匿名自调用函数。很多的框架都使用了沙箱模式<ul>
+<li>与外界隔离。即可以分割作用域</li>
+<li>内部代码自执行。 <ul>
+<li>在实际开发中，可以考虑将全局对象当做实参传入沙箱内部的变量，以提高js性能。</li>
+<li>用例：如果在开发中，遇到只需要执行一次的代码块。可以将其放到沙箱内部。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>缓存 – 优化fib递归调用性能</li>
+<li>实现面向对象的封装<ul>
+<li>在Java 中,对象的属性可以 添加 访问修饰符,private, public,而在js并没这些关键字</li>
+<li>Object.defineProperty </li>
+</ul>
+</li>
+<li>科里化：将一个拥有多个参数的函数 转化成 一个单一参数函数 的形式。</li>
+</ul>
+</li>
+<li><p>变量的搜索原则：当访问一个变量时，</p>
+<ul>
+<li>首先在当前作用域上查找，如果找到就直接使用，并停止查找；</li>
+<li>如果没有找到，就会向上一级作用域上查找，如果找到就直接使用，并停止查找；</li>
+<li>如果还没有找到就继续向上一级作用域查找，直到全局作用域，如果找到就直接使用，并停止查找；</li>
+<li>否则报错（xxx is not defined.）</li>
+</ul>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/12/22/面向对象05/" data-id="cix01k5t9000b5cr75uh6keul" class="article-share-link">Delen</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-面向对象04" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/12/22/面向对象04/" class="article-date">
+  <time datetime="2016-12-22T06:53:50.000Z" itemprop="datePublished">2016-12-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/12/22/面向对象04/">面向对象04</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ol>
+<li><p>delete</p>
+<ul>
+<li>可以删除对象的指定属性</li>
+<li>注意 在操作DOM对象时，只能删除通过”.”或”[]”,方式添加的自定义属性。</li>
+</ul>
+</li>
+<li><p>arguments 伪数组对象，用于存储实参</p>
+<ul>
+<li>arguments.callee: 返回正在执行的函数。</li>
+<li><p>length: 存储实参的个数</p>
+</li>
+<li><p>用途：可以用在 不定项形参个数 的 函数实现</p>
+</li>
+<li>函数没有重载，可以用arguments模拟函数重载</li>
+</ul>
+</li>
+<li><p>构造函数的执行过程</p>
+<ul>
+<li>先创建一个空对象；</li>
+<li>将构造函数的作用域 交给 上述对象 || this -&gt; 空对象</li>
+<li>开始执行构造函数内部代码</li>
+<li><p>return this;</p>
+</li>
+<li><p>注意：在构造函数中，如果显式 返回一个 基本数据类型 数据 会被忽略掉。当然返回对象就不会。</p>
+</li>
+</ul>
+</li>
+<li><p>大表哥案例–看页面 </p>
+</li>
+<li><p>实例成员 与 静态成员</p>
+<ul>
+<li>实例成员：通过构造函数创建出来的对象上的成员，称为实例成员</li>
+<li><p>静态成员：函数对象上的成员，被称为静态成员</p>
+</li>
+<li><p>区别：实例成员必须先创建实例，在访问；而静态成员直接通过函数的名字即可访问。</p>
+</li>
+<li>在实际开发时，如果遇到工具类方法，此时可以考虑写成 静态成员。</li>
+<li>静态成员 相对于 实例成员 好处为：不需要创建对象，直接通过函数名字来访问成员。</li>
+</ul>
+</li>
+<li><p>递归：函数调用自己。</p>
+<ul>
+<li>场景：在遍历 树形结构 时，优先考虑使用递归方式。</li>
+<li>摸索规律，找到一个简单的方式 来解决 复杂问题 。</li>
+</ul>
+</li>
+<li><p>词法作用域</p>
+<ul>
+<li>全局作用域</li>
+<li><p>局部作用域</p>
+</li>
+<li><p>全局变量</p>
+</li>
+<li><p>局部变量</p>
+</li>
+<li><p>定义：<br>变量的作用域 是由代码 书写的位置决定 而不是 变量被使用的位置决定；<br>只有函数可以限定作用域。</p>
+</li>
+</ul>
+</li>
+<li><p>js中预解析</p>
+<ul>
+<li>词法分析: 在此阶段 如果代码有语法错误会直接抛出异常。</li>
+<li>变量名提升 和 函数名提升</li>
+</ul>
+</li>
+<li><p>in</p>
+<ul>
+<li>语法： in 左边的操作数必须为 字符串类型 ，表示属性的名字，<br>如果不是，会尝试将其转换成字符串，如果失败了，就报错。<br>右边的操作数 为 对象。不为对象，报错。</li>
+<li>含义：判断对象是否能访问到该属性，如果能，就返回true，否则返回false。</li>
+</ul>
+</li>
+<li><p>声明的全局变量都是 window对象的属性</p>
+</li>
+<li><p>函数的名字 存储的是 函数对象的地址</p>
+</li>
+<li><p>闭包的概念: 就是 可以访问其他函数内部数据 的 函数。</p>
+<ul>
+<li>在js中，函数内部的数据在外部无法访问。</li>
+<li>为了访问到函数内部的数据，提出闭包技术。</li>
+</ul>
+</li>
+<li><p>垃圾回收机制</p>
+<ul>
+<li><p>引用计数：变量默认 计数为0，如果有其他数据 对其 有使用，就引用计数 + 1；<br>  如果 对该变量使用的数据 释放掉了， 那么此时引用计数 - 1；<br>  在一定周期后，如果变量引用计数为0，就将其回收掉。</p>
+</li>
+<li><p>标记清除: 如果变量 进入了 一个执行环境 此时该变量 被标记为 不可回收；<br>  如果变量 出了 执行环境 此时该变量 被标记为 可回收。<br>  在一定周期后，如果变量被标记为 可回收，就将其回收掉。<br>  <strong>从文档的根节点 尝试找一条路径 可以到达变量。如果找到了，就将该变量标记为 不可回收</strong><br>  <strong>否则标记为 可回收</strong></p>
+<p>+ </p>
+</li>
+</ul>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/12/22/面向对象04/" data-id="cix01k5tr000c5cr7rbh11k2x" class="article-share-link">Delen</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-面向对象03" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/12/22/面向对象03/" class="article-date">
+  <time datetime="2016-12-22T06:52:59.000Z" itemprop="datePublished">2016-12-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/12/22/面向对象03/">面向对象03</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ol>
+<li><p>原型链的概念</p>
+<ul>
+<li><p>所谓原型链 就是指 从一个对象到Object.prototype之间存在一条体现继承层次关系的链式结构，这个结构被称为对象的原型链。</p>
+</li>
+<li><p>本质：链上的每一个对象都是通过__proto__属性连接起来的。</p>
+</li>
+</ul>
+</li>
+<li><p>绘制原型链</p>
+<ul>
+<li><p>先简写对象的原型链</p>
+</li>
+<li><p>将上述原型链上的所有对象绘制在图形上。并且将和原型链相关的属性添加到对象上。</p>
+</li>
+<li><p>给对象的每一个属性确定指向</p>
+</li>
+<li><p>如果在图形上的每一个对象的属性都有正确指向，说明绘制完成。</p>
+</li>
+</ul>
+</li>
+<li><p>Object.prototype 的方法简介</p>
+<ol>
+<li><p>hasOwnProperty</p>
+<ul>
+<li>has 有</li>
+<li>own 自己的</li>
+<li>property 属性</li>
+<li>语法：obj.hasOwnProperty(“propName”)</li>
+<li>用来判断指定属性是否为对象自身的，而不是继承过来的;如果是自身的就返回true，<br>否则返回false</li>
+</ul>
+</li>
+<li><p>isPrototypeOf</p>
+<ul>
+<li>is 是</li>
+<li>Prototype 原型</li>
+<li>of 的</li>
+<li>obj1.isPrototypeOf(obj2)</li>
+<li>用来判断obj1 对象 是否为 obj2对象 的原型；如果是，就返回true，否则返回false。</li>
+</ul>
+</li>
+<li><p>propertyIsEnumerable</p>
+<ul>
+<li>property 属性</li>
+<li>is 是</li>
+<li>Enumerable 可枚举的 可以使用for in遍历出来的属性</li>
+<li>obj.propertyIsEnumerable(‘propName’)</li>
+<li>hasOwnProperty升级版：</li>
+<li>满足这2个条件返回true，否则返回false<ul>
+<li>指定的属性必须是对象本身的</li>
+<li>该属性必须可枚举</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>装箱 与 拆箱</p>
+<ul>
+<li>将基本数据类型 装换为 复合数据类型，这个过程被称为 装箱</li>
+<li>将复合数据类型 装换为 基本数据类型，这个过程被称为 拆箱</li>
+</ul>
+</li>
+<li><p>强调几点</p>
+<ul>
+<li><p>默认原型对象才具有constructor属性</p>
+</li>
+<li><p>只有函数具有prototype属性（除了Function.prototype）</p>
+</li>
+<li><p>任意的对象都具有__proto__属性</p>
+</li>
+</ul>
+</li>
+<li><p>instanceof介绍</p>
+<ul>
+<li><p>obj instanceof constructor </p>
+</li>
+<li><p>规则：如果constructor 的原型 出现在 obj 的原型链上的话，表达式返回值为true，否则false。</p>
+</li>
+</ul>
+</li>
+<li><p>Function</p>
+<ul>
+<li><p>声明式</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>表达式</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">fnName();</div><div class="line"><span class="keyword">var</span> fnName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;;</div></pre></td></tr></table></figure>
+</li>
+<li><p>构造函数方式    </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> fn = <span class="keyword">new</span> <span class="built_in">Function</span>(<span class="string">"arg1"</span>, <span class="string">"arg2"</span>, <span class="string">"arg3"</span>, ...<span class="string">"argN"</span>, <span class="string">"body"</span>);</div></pre></td></tr></table></figure>
+<ul>
+<li>“arg1”, “arg2”, “arg3”, …”argN” 为生成函数的形参列表，且为可选的参数列表</li>
+<li>“body” 为生成函数的函数体部分</li>
+<li>如果不给构造函数传参数的话，就会创建一个没有形参列表也没有函数体实现的函数。</li>
+<li>如果只传入一个参数，那么这个参数值会交给”body”形参。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>eval 与 Function</p>
+<ul>
+<li><p>共同点</p>
+<ul>
+<li>都可以将一个字符串当做一段js代码来执行。</li>
+</ul>
+</li>
+<li><p>eval 具有作用域安全问题，有可能污染变量，而Function并不会。</p>
+</li>
+<li>可以肆意在全局上执行一段字符串代码，会造成网站不安全。</li>
+</ul>
+</li>
+<li><p>两个概念</p>
+<ul>
+<li>函数对象：在绘制函数的原型链的时候，将函数称为 函数对象；</li>
+<li>除了函数，都称为 普通对象。</li>
+</ul>
+</li>
+<li><p>函数相关属性</p>
+<ul>
+<li><p>caller: 返回调用当前函数的函数</p>
+<ul>
+<li>所谓函数调用函数 就是指在函数体内部调用其他函数</li>
+</ul>
+</li>
+<li><p>length: 记录的是形参的个数</p>
+</li>
+<li><p>name: 记录函数的名字</p>
+</li>
+</ul>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/12/22/面向对象03/" data-id="cix01k5t100095cr7gfbcm6ze" class="article-share-link">Delen</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-面向对象02" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/12/22/面向对象02/" class="article-date">
+  <time datetime="2016-12-22T06:51:59.000Z" itemprop="datePublished">2016-12-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/12/22/面向对象02/">面向对象02</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="原型的概念"><a href="#原型的概念" class="headerlink" title="原型的概念"></a>原型的概念</h3><ol>
+<li><p>概念：所谓原型就是指 函数的prototype属性所引用的对象 </p>
+<ul>
+<li>只要定义一个函数，那么就会创建其原型</li>
+<li>由上述函数创建出来的所有对象，都可以直接访问到原型上的成员</li>
+</ul>
+</li>
+<li><p>作用：实现同类对象之间的数据共享。</p>
+</li>
+<li><p>获取原型方式</p>
+<ul>
+<li>通过函数：<fnname>.prototype</fnname></li>
+<li>通过对象：<objname>.__proto__</objname></li>
+<li>注意：已__开头和结尾的属性均为非标准属性; <pre><code>原型 默认具有constructor属性，引用的就是其构造函数
+</code></pre></li>
+</ul>
+</li>
+<li><p>原型特性：</p>
+<ul>
+<li><p>动态性</p>
+<ul>
+<li>在已有的原型上扩展成员，直接反映到已创建出来的对象上。</li>
+<li>如果置换了已有的原型，那么会反映到后面新创建的对象，而不会影响之前创建的对象</li>
+</ul>
+</li>
+<li><p>唯一性</p>
+<ul>
+<li>由同一个构造函数创建出来的所有对象，都共享一个原型。</li>
+</ul>
+</li>
+<li><p>不可变性</p>
+<ul>
+<li>不能通过对象来修改原型上的成员</li>
+</ul>
+</li>
+<li><p>共享性</p>
+<ul>
+<li>所有的对象都可以直接访问其原型上的成员</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>组合方式创建对象</p>
+<ul>
+<li>组合原型和构造函数一起来创建对象</li>
+<li>将私有的属性写在构造函数内</li>
+<li>将共有的属性或行为写到其原型上</li>
+</ul>
+</li>
+</ol>
+<h3 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h3><ol>
+<li><p>注意：其他面向对象语言 C# Java swift 类与类之间继承</p>
+<pre><code>而在js中，是对象与对象之间的继承
+</code></pre></li>
+<li><p>概念：就是指 一个对象有权去访问另一个对象上的成员（属性和方法）</p>
+</li>
+<li><p>继承的实现</p>
+<ul>
+<li>原型式继承<br>  a: 在原有的原型上扩展<br>  b: 置换原型</li>
+<li>混入式：将要继承的对象上的所有成员拷贝一份，添加到本身。</li>
+</ul>
+</li>
+<li><p>Object.create方法</p>
+<ul>
+<li>实现原型式继承（通过置换原型方法）</li>
+<li>语法：</li>
+</ul>
+</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> newObj = <span class="built_in">Object</span>.create(parent);</div></pre></td></tr></table></figure>
+<ol>
+<li><p>相关结论：</p>
+<ul>
+<li>Object.prototype的原型为null</li>
+<li>默认 原型对象  的  原型为Object.prototype</li>
+</ul>
+</li>
+<li><p>属性搜索原则：当访问对象的某个属性时，</p>
+<ul>
+<li>首先，在对象本身上查找，如果找到就返回值，并停止查找；</li>
+<li>如果没有找到就向其原型对象上查找，如果找到就返回值，并停止查找；</li>
+<li>如果在没有找到，就继续向其原型的原型对象上查找，直到Object.prototype</li>
+<li>此时如果找到就返回值，否则值为undefined。</li>
+</ul>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/12/22/面向对象02/" data-id="cix01k5sl00075cr70cmqr47x" class="article-share-link">Delen</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-面向对象01" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/12/22/面向对象01/" class="article-date">
+  <time datetime="2016-12-22T06:50:14.000Z" itemprop="datePublished">2016-12-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/12/22/面向对象01/">面向对象01</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="什么是JavaScript？"><a href="#什么是JavaScript？" class="headerlink" title="什么是JavaScript？"></a>什么是JavaScript？</h3><ol>
+<li><p>js是一门脚本语言</p>
+</li>
+<li><p>特点：</p>
+<ul>
+<li>基于对象</li>
+<li>多范式</li>
+<li>动态性<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> o = &#123;&#125;;</div><div class="line">o.name = <span class="string">'tom'</span>;</div><div class="line">o[<span class="string">"age"</span>] = <span class="number">18</span>;</div><div class="line"><span class="keyword">var</span> attrName = <span class="string">'age'</span>;</div><div class="line"><span class="built_in">console</span>.log(o.attrName);</div><div class="line"><span class="built_in">console</span>.log(o[attrName]);</div></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>js 和 ECMASCript 的关系</p>
+<ul>
+<li>js是ECMASCript的一种实现</li>
+<li>包含ECMASCript、DOM、 BOM</li>
+</ul>
+</li>
+</ol>
+<h3 id="数据类型以及转换"><a href="#数据类型以及转换" class="headerlink" title="数据类型以及转换"></a>数据类型以及转换</h3><ol>
+<li><p>基本数据类型</p>
+<ul>
+<li>数字</li>
+<li>字符串</li>
+<li>bool</li>
+</ul>
+</li>
+<li><p>复合数据类型</p>
+<ul>
+<li>对象（自定义对象、内置对象）</li>
+</ul>
+</li>
+<li><p>空类型</p>
+<ul>
+<li>null </li>
+<li>undefined</li>
+</ul>
+</li>
+<li><p>数字 和 字符串</p>
+<ul>
+<li><p>number to string 性能： 3 &gt; 2 &gt; 1 &gt; 4</p>
+<ul>
+<li>num.toString()</li>
+<li>String(num)</li>
+<li>num + ‘’</li>
+<li>new String(num)</li>
+</ul>
+</li>
+<li><p>string to number 3 &gt; 2 &gt; 1 &gt; 4</p>
+<ul>
+<li>Number(str)</li>
+<li>parseInt(str) parseFloat(str); ‘47984px’</li>
+<li>str - 0 +str -str str * 1 +new Date;</li>
+<li>new Number(str);</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>其他类型转换成bool</p>
+<ul>
+<li>所有对象   转换bool值为 true</li>
+<li>非0数字    转换bool值为 true</li>
+<li>非空字符串 转换bool值为 true</li>
+</ul>
+</li>
+</ol>
+<h3 id="和-区别"><a href="#和-区别" class="headerlink" title="==和===区别"></a>==和===区别</h3><ol>
+<li><p>==   先做类型转换，在比较</p>
+</li>
+<li><p>===  直接比较，类型 和 值 是否都相等</p>
+</li>
+</ol>
+<h3 id="值类型与引用类型"><a href="#值类型与引用类型" class="headerlink" title="值类型与引用类型"></a>值类型与引用类型</h3><ol>
+<li><p>值类型 就是基本数据类型，在做参数传递时，拷贝值，赋值给参数</p>
+</li>
+<li><p>引用类型 就是复合数据类型， 在做参数传递时，拷贝对象地址，赋值给参数。</p>
+</li>
+</ol>
+<h3 id="常用内置对象方法"><a href="#常用内置对象方法" class="headerlink" title="常用内置对象方法"></a>常用内置对象方法</h3><ol>
+<li><p>内置对象</p>
+<ul>
+<li><p>Date</p>
+<ul>
+<li>+new Date;</li>
+</ul>
+</li>
+<li><p>Array</p>
+<ul>
+<li>push(1, 2, 3)：追加元素</li>
+<li>pop()：</li>
+<li>unshift(1, 2, 3)：在最前面添加元素</li>
+<li>shift()：</li>
+<li>slice(start, end)：</li>
+<li>reverse：</li>
+<li>join(‘,’) ‘name=tom&amp;age=18’ {name: ‘tom’, age: 18}</li>
+<li>sort 回调函数规则：返回值大于0，就交换参数位置，小于0不交换；等于0保持相对位置</li>
+<li>indexOf</li>
+<li>forEach</li>
+<li>map(fn)</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<pre><code>+ Math 单体对象 Math.PI 360 = 2 * Math.PI
+   - random()
+   - floor()
+   - ceil()
+   - abs
+   - sqrt
+   - sin(弧度)
+   - cos(弧度)
+   - max(1, 3, 5, 9)
+   - pow(x, y)
+
++ String
+   - slice(start, end)
+   - substr(start, length) 每个参数必须为正整数
+   - substring(start, end)
+   - replace(匹配的子串, 替换的字符串)
+       去掉首尾空白 str.replace(/^\s+|\s+$/, &apos;&apos;)
+   - split(&apos;子串&apos;)    
+   - indexOf
+   - charAt(index)
+   - search()
+   - match() 返回值数组
+   - toLowerCase()
+   - toUpperCase()
+   - concat()
+
++ RegExp
++ Error
+    + throw 手动抛出异常
+    + throw new Error(&apos;参数异常&apos;)
+    + try{// maybe }catch(e){// handle error}
+</code></pre><h3 id="原生DOM操作方法以及属性"><a href="#原生DOM操作方法以及属性" class="headerlink" title="原生DOM操作方法以及属性"></a>原生DOM操作方法以及属性</h3><ol>
+<li><p>属性</p>
+<ul>
+<li>parentNode</li>
+<li>previousSibling</li>
+<li>nextSibling</li>
+<li>firstChild</li>
+<li>lastChild</li>
+<li>children</li>
+<li>childNodes</li>
+<li>innerHTML 可读可写的属性</li>
+<li>nodeType<ul>
+<li>1   element</li>
+<li>2   attribute node</li>
+<li>3   text node</li>
+<li>8   注释</li>
+<li>9   document</li>
+<li>11  文档片段 documentFragment div.appendChild()</li>
+</ul>
+</li>
+<li>nodeName </li>
+</ul>
+</li>
+<li><p>方法：所有的方法都是通过父节点去调用</p>
+<ul>
+<li>parentNode.appendChild(new node)</li>
+<li>parentNode.insertBefore(new node, old node)</li>
+<li>parentNode.removeChild(node)</li>
+<li>parentNode.replaceChild(‘new node’, ‘old node’)</li>
+</ul>
+</li>
+</ol>
+<h3 id="创建对象方法"><a href="#创建对象方法" class="headerlink" title="创建对象方法"></a>创建对象方法</h3><ol>
+<li>字面量（直接量）</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> obj = &#123;&#125;;</div><div class="line"><span class="keyword">var</span> arr = [];</div></pre></td></tr></table></figure>
+<ol>
+<li>构造函数</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name, age, gender</span>) </span>&#123;</div><div class="line">	<span class="keyword">this</span>.name = name;</div><div class="line">	<span class="keyword">this</span>.age = age;</div><div class="line">	<span class="keyword">this</span>.gender = gender;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> p1 = <span class="keyword">new</span> Person(<span class="string">'tom'</span>, <span class="number">18</span>, <span class="string">'nicai'</span>);</div><div class="line"><span class="keyword">var</span> p2 = Person(<span class="string">'jack'</span>, <span class="number">19</span>, <span class="string">'未知'</span>);</div></pre></td></tr></table></figure>
+<ol>
+<li>工厂模式</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">Person</span>(<span class="params">name, age, gender</span>) </span>&#123;</div><div class="line">	<span class="keyword">this</span>.name = name;</div><div class="line">	<span class="keyword">this</span>.age = age;</div><div class="line">	<span class="keyword">this</span>.gender = gender;</div><div class="line">&#125;</div><div class="line"><span class="comment">// 1</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">createPerson</span>(<span class="params">name, age, gender</span>) </span>&#123;</div><div class="line">	<span class="keyword">var</span> obj = &#123;&#125;;</div><div class="line">	obj.name = name;</div><div class="line">	obj.age = age;</div><div class="line">	obj.gender = gender;</div><div class="line">	<span class="keyword">return</span> obj;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="comment">// 2</span></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">createPerson</span>(<span class="params">name, age, gender</span>) </span>&#123;	</div><div class="line">	<span class="keyword">return</span> <span class="keyword">new</span> Person(name, age, gender);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="面向对象思想"><a href="#面向对象思想" class="headerlink" title="面向对象思想"></a>面向对象思想</h3><ol>
+<li><p>面向过程：亲力亲为、有些代码顺序不可改变， 执行者</p>
+</li>
+<li><p>面向对象：管理者，在解决一个问题时，首先看是否有对象可以解决，如果有，就使用该对象解决问题。</p>
+<ul>
+<li>实质：是找一个对象帮你解决问题。如果没有此对象，就可以考虑自己封装一个。</li>
+<li>可维护性</li>
+<li>可扩展性</li>
+</ul>
+</li>
+<li><p>缺点：在使用面向对象编程时，会造成代码的复杂度提高。</p>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/12/22/面向对象01/" data-id="cix01k5sx00085cr745w3mrum" class="article-share-link">Delen</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Canvas详解" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/12/22/Canvas详解/" class="article-date">
+  <time datetime="2016-12-22T06:46:51.000Z" itemprop="datePublished">2016-12-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/12/22/Canvas详解/">Canvas详解</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="源代码"><a href="#源代码" class="headerlink" title="源代码"></a>源代码</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Document<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">canvas</span>&gt;</span><span class="tag">&lt;/<span class="name">canvas</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></div><div class="line">//获取画布</div><div class="line">var cvs = document.querySelector('canvas');</div><div class="line">//给画布添加绘画工具</div><div class="line">var ctx = cvs.getContext('2d');</div><div class="line">//封装一个矩形工具</div><div class="line">function JuXing(x, y, width, height, lineWidth, strokeStyle, fillStyle) &#123;</div><div class="line">    this.x = x;</div><div class="line">    this.y = y;</div><div class="line">    this.width = width;</div><div class="line">    this.height = height;</div><div class="line">    this.lineWidth = lineWidth;</div><div class="line">    this.strokeStyle = strokeStyle;</div><div class="line">    this.fillStyle = fillStyle;</div><div class="line">&#125;</div><div class="line">//给原型添加一个draw的方法</div><div class="line">JuXing.prototype.draw = function() &#123;</div><div class="line">	//清除路径 每次创建新的路径前,都清除前面的路径,</div><div class="line">    ctx.beginPath();</div><div class="line">    //画笔的位置</div><div class="line">    ctx.moveTo(this.x, this.y);</div><div class="line">    //画笔移动的位置</div><div class="line">    ctx.lineTo(this.x + this.width, this.y);</div><div class="line">    ctx.lineTo(this.x + this.width, this.y + this.height);</div><div class="line">    ctx.lineTo(this.x, this.y + this.height);</div><div class="line">    ctx.lineTo(this.x, this.y);</div><div class="line">    //闭合路径 将连接点锐化</div><div class="line">    ctx.closePath();</div><div class="line">    //添加描边样式</div><div class="line">    ctx.strokeStyle = this.strokeStyle;</div><div class="line">    //添加填充样式</div><div class="line">    ctx.fillStyle = this.fillStyle;</div><div class="line">    //添加线宽</div><div class="line">    ctx.lineWidth = this.lineWidth;</div><div class="line">    //先填充</div><div class="line">    ctx.fill();</div><div class="line">    //再描边</div><div class="line">    ctx.stroke();</div><div class="line">&#125;;</div><div class="line">//创建一个新的事例</div><div class="line">var juxing = new JuXing(10, 10, 100, 100, 5, 'red', 'yellow');</div><div class="line">// 调用这个事例里面的方法  进行画画</div><div class="line">juxing.draw();</div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure>
+<h2 id="获取绘图环境的方法"><a href="#获取绘图环境的方法" class="headerlink" title="获取绘图环境的方法"></a>获取绘图环境的方法</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//获取画布</span></div><div class="line"><span class="keyword">var</span> cvs=<span class="built_in">document</span>.querySelector(<span class="string">'cvs'</span>);</div><div class="line"><span class="comment">//在画布上方法;</span></div><div class="line"><span class="keyword">var</span> ctx=cvs.getContext(<span class="string">'2d'</span>);</div></pre></td></tr></table></figure>
+<h2 id="设置画布大小"><a href="#设置画布大小" class="headerlink" title="设置画布大小"></a>设置画布大小</h2><ol>
+<li><p>DOM大小</p>
+</li>
+<li><p>画布大小( <strong>默认长300,宽150</strong>)</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ctx.width=<span class="number">300</span>;</div><div class="line">ctx.height=<span class="number">300</span>;</div></pre></td></tr></table></figure>
+</li>
+<li><p>两者区别</p>
+</li>
+</ol>
+<h2 id="开始绘图"><a href="#开始绘图" class="headerlink" title="开始绘图"></a>开始绘图</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment">/*等腰三角形*/</span></div><div class="line"><span class="comment">//移动到起始位置</span></div><div class="line">ctx.moveTo(<span class="number">50</span>,<span class="number">50</span>);</div><div class="line"><span class="comment">//开始画路径</span></div><div class="line">ctx.lineTo(<span class="number">65</span>,<span class="number">70</span>);</div><div class="line">ctx.lineTo(<span class="number">35</span>,<span class="number">70</span>);</div><div class="line">ctx.lineTo(<span class="number">50</span>,<span class="number">50</span>);</div><div class="line"><span class="comment">//描边</span></div><div class="line">ctx.stroke();</div><div class="line"><span class="comment">//描边色</span></div><div class="line">ctx.strokeStyle =  skyblue;</div><div class="line"><span class="comment">//再按照新的描边样式描边(将上面的描边覆盖);</span></div><div class="line">ctx.stoke();</div></pre></td></tr></table></figure>
+<h2 id="描边和设置描边"><a href="#描边和设置描边" class="headerlink" title="描边和设置描边"></a>描边和设置描边</h2><ol>
+<li><p>stroke();描边storkeStyle();设置描边样式</p>
+</li>
+<li><p>默认为黑色</p>
+</li>
+<li><p>描边是在画完路径以后进行的,</p>
+</li>
+<li><p>如果有描边样式,描边要在设置描边样式之后.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ctx.strokeStyle=<span class="string">'red'</span>;</div><div class="line">ctx.stroke();</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="清除路径"><a href="#清除路径" class="headerlink" title="清除路径"></a>清除路径</h2><ul>
+<li>beginPath();<ul>
+<li>only清除之前的路径;</li>
+<li>不会清除之前的图形</li>
+</ul>
+</li>
+</ul>
+<h2 id="闭合路径"><a href="#闭合路径" class="headerlink" title="闭合路径"></a>闭合路径</h2><ul>
+<li>closePath();<ul>
+<li>为了防止定点的锯齿,让closePath会吧顶点锐化处理</li>
+<li>即最后一条边可以不画,closePath会自动锐化,也就是添加一条边.</li>
+</ul>
+</li>
+</ul>
+<h2 id="线宽"><a href="#线宽" class="headerlink" title="线宽"></a>线宽</h2><ol>
+<li><p>lineWidth;</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//要写在stroke()前面;</span></div><div class="line">ctx.lineWidth=<span class="number">10</span>;</div></pre></td></tr></table></figure>
+<p>​</p>
+</li>
+</ol>
+<h2 id="填充-amp-设置填充"><a href="#填充-amp-设置填充" class="headerlink" title="填充&amp;设置填充"></a>填充&amp;设置填充</h2><ol>
+<li>fill();填充,fillStyle();填充样式</li>
+<li>填充要卸载填充样式之后</li>
+<li>默认为黑色</li>
+<li>填充会将之前的颜色覆盖掉</li>
+</ol>
+<h2 id="填充和描边的顺序"><a href="#填充和描边的顺序" class="headerlink" title="填充和描边的顺序"></a>填充和描边的顺序</h2><ol>
+<li>canvas中的边框跟普通的边框不一样</li>
+<li>其中一半在画布外面,一半在画布里面</li>
+<li>所以填充和描边顺序不一样结果会不一样</li>
+<li>先填充,再描边,描边的结果是真实的边,画布里面的那部分边将画布遮住,能显示;</li>
+<li>先描边,再填充,填充的会将画布中的边盖住,只能显示边的一半宽度.</li>
+</ol>
+<h2 id="非0环绕原则"><a href="#非0环绕原则" class="headerlink" title="非0环绕原则"></a>非0环绕原则</h2><ol>
+<li><p>作用</p>
+<p>用来判断路径围起来的图形,是在路径内还是路径外</p>
+</li>
+<li><p>原理</p>
+<p><img src="file:///C:\Users\WK\AppData\Roaming\feiq\RichOle\1348836752.bmp" alt="img"></p>
+</li>
+</ol>
+<h1 id="API方法"><a href="#API方法" class="headerlink" title="API方法"></a>API方法</h1><h2 id="清除画布"><a href="#清除画布" class="headerlink" title="清除画布"></a>清除画布</h2><ul>
+<li><p>clearRect();以长方形的方式清除</p>
+</li>
+<li><p>clearRect(x,y,width,height);</p>
+<ul>
+<li>x:起点横坐标</li>
+<li>y:起点纵坐标</li>
+<li>width长</li>
+<li>height宽</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ctx.clearRect(<span class="number">0</span>,<span class="number">0</span>,<span class="number">100</span>,<span class="number">100</span>);</div></pre></td></tr></table></figure>
+<p>​</p>
+</li>
+</ul>
+<h2 id="矩形"><a href="#矩形" class="headerlink" title="矩形"></a>矩形</h2><ul>
+<li>rect(); 有路径strokeRect();没有路径</li>
+<li>rect(x,y,width,height);strokeRect(x,y,width,height);<ul>
+<li>x:起点横坐标</li>
+<li>y:起点纵坐标</li>
+<li>width长</li>
+<li>height宽</li>
+</ul>
+</li>
+</ul>
+<h2 id="填充矩形"><a href="#填充矩形" class="headerlink" title="填充矩形"></a>填充矩形</h2><ul>
+<li>fillRect();</li>
+<li>fillRect(x,y,width,height);<ul>
+<li>x:起点横坐标</li>
+<li>y:起点纵坐标</li>
+<li>width长</li>
+<li>height宽</li>
+</ul>
+</li>
+</ul>
+<h1 id="高级"><a href="#高级" class="headerlink" title="高级"></a>高级</h1><h2 id="lineCap-线帽样式"><a href="#lineCap-线帽样式" class="headerlink" title="lineCap  线帽样式"></a>lineCap  线帽样式</h2><ol>
+<li>butt</li>
+<li>round</li>
+<li><p>request</p>
+<h2 id="lineJion焦点样式"><a href="#lineJion焦点样式" class="headerlink" title="lineJion焦点样式"></a>lineJion焦点样式</h2></li>
+<li><p>miter</p>
+</li>
+<li>round</li>
+<li>bevel</li>
+</ol>
+<h2 id="setLineDash-虚线绘制"><a href="#setLineDash-虚线绘制" class="headerlink" title="setLineDash();  虚线绘制"></a>setLineDash();  虚线绘制</h2><ol>
+<li><p>setLineDash();</p>
+<ol>
+<li>数组中的长度  任意,奇数偶数任意</li>
+<li>数组长度 一个 实现虚线相等</li>
+<li>数组长度 两个 一个实线长度一个虚线长度</li>
+<li>数组长度3+ [a,b,c] a实线,b虚线,c实线,a虚线…….</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ctx.setLineDash([<span class="number">5</span>,<span class="number">5</span>]);</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="路径起点"><a href="#路径起点" class="headerlink" title="路径起点"></a>路径起点</h2><ol>
+<li>如果没有moveTo,那么第一个lineTo就相当于moveTo</li>
+<li>​</li>
+</ol>
+<h2 id="arc-画弧路径"><a href="#arc-画弧路径" class="headerlink" title="arc();  画弧路径"></a>arc();  画弧路径</h2><ol>
+<li><p>arc();</p>
+</li>
+<li><p>arc(圆心x,圆心y,半径,弧的起始位置,弧的结束位置,是否逆时针画(<strong>可选</strong>));</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">ctx.arc(<span class="number">100</span>,<span class="number">100</span>,<span class="number">50</span>,<span class="number">0</span>,<span class="number">360</span>,<span class="literal">true</span>);</div><div class="line">ctx.stroke();</div></pre></td></tr></table></figure>
+<p>​</p>
+</li>
+</ol>
+<h1 id="绘制文字-amp-文字样式"><a href="#绘制文字-amp-文字样式" class="headerlink" title="绘制文字&amp;文字样式"></a>绘制文字&amp;文字样式</h1><h2 id="font-设置文字样式"><a href="#font-设置文字样式" class="headerlink" title="font  设置文字样式"></a>font  设置文字样式</h2><ol>
+<li>ctx,font=’900 2px 微软雅黑’;<ol>
+<li>跟cssfont一样</li>
+</ol>
+</li>
+</ol>
+<h2 id="textAlign-设置文字水平对齐"><a href="#textAlign-设置文字水平对齐" class="headerlink" title="textAlign  设置文字水平对齐"></a>textAlign  设置文字水平对齐</h2><ul>
+<li><p>ctx.textAlign=’left’;</p>
+<ol>
+<li>left start</li>
+</ol>
+</li>
+</ul>
+<ol>
+<li>center</li>
+<li>right   end</li>
+</ol>
+<h2 id="strokeText-描边文字"><a href="#strokeText-描边文字" class="headerlink" title="strokeText()  描边文字"></a>strokeText()  描边文字</h2><ul>
+<li>ctx.strokeText(‘酱香饼’,100,100,1000);</li>
+</ul>
+<ol>
+<li>文字</li>
+<li>起始位置x坐标</li>
+<li>起始位置y坐标</li>
+<li>限制长度</li>
+</ol>
+<h2 id="fillText-填充文字"><a href="#fillText-填充文字" class="headerlink" title="fillText()  填充文字"></a>fillText()  填充文字</h2><ul>
+<li>ctx.fillText(‘酱香饼’,100,100,100);</li>
+</ul>
+<ol>
+<li>文字</li>
+<li>起始位置x坐标</li>
+<li>起始位置y坐标</li>
+<li>限制长度</li>
+</ol>
+<h2 id="textBaseline-设置文字垂直对齐"><a href="#textBaseline-设置文字垂直对齐" class="headerlink" title="textBaseline  设置文字垂直对齐"></a>textBaseline  设置文字垂直对齐</h2><ul>
+<li>ctx.textBaseline=’top’;</li>
+</ul>
+<ol>
+<li><p>top</p>
+</li>
+<li><p>middle</p>
+</li>
+<li><p>bottom</p>
+</li>
+<li><p>alphabetic  默认</p>
+</li>
+<li><p>hanging</p>
+</li>
+<li><p>ideographic</p>
+</li>
+<li><p><img src="file:///C:\Users\WK\AppData\Roaming\feiq\RichOle\1019417152.bmp" alt="img"></p>
+<p>​</p>
+</li>
+</ol>
+<h2 id="measureText-预测文字"><a href="#measureText-预测文字" class="headerlink" title="measureText();  预测文字"></a>measureText();  预测文字</h2><ul>
+<li>ctx.measureText(‘嘿嘿嘿嘿嘿嘿’);</li>
+<li>预测一段文字,按照当前文字的大小,绘制时,要占用多打的宽度高度.</li>
+<li>返回值:是一个对象,目前这个对象只有一个值,width.</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> obj=ctx.measureText(<span class="string">'嘿嘿嘿'</span>);</div><div class="line"><span class="keyword">var</span> width=obj.width;</div><div class="line"><span class="built_in">console</span>.log(width);</div></pre></td></tr></table></figure>
+<h1 id="绘制扇形"><a href="#绘制扇形" class="headerlink" title="绘制扇形"></a>绘制扇形</h1><ul>
+<li>绘制扇形步骤<ol>
+<li>moveTo到圆心</li>
+<li>画扇形回应的弧</li>
+<li>closePath()</li>
+<li>fill()或者stroke();</li>
+</ol>
+</li>
+</ul>
+<h1 id="绘制图像img"><a href="#绘制图像img" class="headerlink" title="绘制图像img"></a>绘制图像img</h1><h2 id="创建img元素的三种方式"><a href="#创建img元素的三种方式" class="headerlink" title="创建img元素的三种方式"></a>创建img元素的三种方式</h2><ol>
+<li><p>html中书写img标签</p>
+</li>
+<li><p>document.createElement(‘img’);</p>
+</li>
+<li><p>new Image();</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> img=<span class="keyword">new</span> Image();</div><div class="line">img.src=<span class="string">"123.jpg"</span>;</div></pre></td></tr></table></figure>
+</li>
+</ol>
+<h2 id="绘制图像"><a href="#绘制图像" class="headerlink" title="绘制图像"></a>绘制图像</h2><ol>
+<li>drawImage(图像资源,  x坐标,  y坐标);</li>
+<li>drawImage(图像资源,  x坐标,  y坐标,  指定图像宽,  指定图像高);</li>
+<li>drawImage(图像资源,  裁剪起点x,  裁剪起点y,  裁剪宽,  裁剪高,  x坐标,  y坐标,  指定图像宽,  指定图像高);</li>
+</ol>
+<h1 id="特殊"><a href="#特殊" class="headerlink" title="特殊"></a>特殊</h1><h2 id="平移"><a href="#平移" class="headerlink" title="平移"></a>平移</h2><ol>
+<li>translate(x,y);</li>
+<li>x平移多少,y平移多少</li>
+</ol>
+<blockquote>
+<p>平移的是<strong>坐标系</strong>,不是图像</p>
+<p>平移会累加</p>
+<p>平移不会影响之前绘制好的内容</p>
+</blockquote>
+<h2 id="旋转"><a href="#旋转" class="headerlink" title="旋转"></a>旋转</h2><ol>
+<li>rotate(Math.PI);</li>
+</ol>
+<blockquote>
+<p>按照顺时针旋转</p>
+<p>旋转的也是<strong>坐标系</strong></p>
+<p>旋转不会影响之前绘制好的内容</p>
+</blockquote>
+<h2 id="缩放"><a href="#缩放" class="headerlink" title="缩放"></a>缩放</h2><ol>
+<li>scale(x,y);</li>
+<li>x水平缩放倍数</li>
+<li>y垂直缩放倍数</li>
+</ol>
+<h2 id="状态保存"><a href="#状态保存" class="headerlink" title="状态保存"></a>状态保存</h2><ol>
+<li><p>save();</p>
+<blockquote>
+<p>保存上一次修改后的值</p>
+<p>可以继续保存</p>
+</blockquote>
+</li>
+</ol>
+<h2 id="状态回滚"><a href="#状态回滚" class="headerlink" title="状态回滚"></a>状态回滚</h2><ol>
+<li><p>restore()</p>
+<blockquote>
+<p>回滚上次保存</p>
+<p>再次回滚会滚到上上次保存,直到默认</p>
+</blockquote>
+</li>
+</ol>
+<h1 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h1><ol>
+<li>动 态设置画布大小会删除画布上的内容.</li>
+<li>描边会被叠加.</li>
+<li>基于状态</li>
+<li>如果没有moveTo,那么第一个lineTo就相当于moveTo</li>
+<li>fil();填充的时候,如果图形没有闭合,会自动闭合;再填充</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/12/22/Canvas详解/" data-id="cix01k5s000025cr7ngpred0l" class="article-share-link">Delen</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-关于H5" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/12/22/关于H5/" class="article-date">
+  <time datetime="2016-12-22T06:39:30.000Z" itemprop="datePublished">2016-12-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/12/22/关于H5/">H5标签</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="起步"><a href="#起步" class="headerlink" title="起步"></a>起步</h3><p>HTML5 是 <strong>W3C</strong> 与 <strong>WHATWG</strong> 合作的结果,WHATWG 指 Web Hypertext Application Technology Working Group。<br>WHATWG 致力于 web 表单和应用程序，而 W3C 专注于 XHTML 2.0。<br>在 2006 年，双方决定进行合作，来创建一个新版本的 HTML。  </p>
+<h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>HTML5 是HTML最新的修订版本，2014年10月由万维网联盟（W3C）完成标准制定。</p>
+<p>HTML5 的设计目的是为了在移动设备上支持多媒体。</p>
+<p>HTML5 简单易学。</p>
+<h3 id="理解"><a href="#理解" class="headerlink" title="理解"></a>理解</h3><p>对比之前的html版本html到底有那些增强？<br>什么是html5？</p>
+<p>我们日常讨论的H5其实指的是一个范称，它是由HTML5 + CSS3 + Javascript等技术组合而成的一个应用开发平台。</p>
+<h2 id="html-提升"><a href="#html-提升" class="headerlink" title="html 提升"></a>html 提升</h2><h3 id="文档声明"><a href="#文档声明" class="headerlink" title="文档声明"></a>文档声明</h3><p>&lt;!doctype&gt; 声明必须位于 HTML5 文档中的第一行,使用非常简单:<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div></pre></td></tr></table></figure></p>
+<h3 id="文档骨架"><a href="#文档骨架" class="headerlink" title="文档骨架"></a>文档骨架</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"utf-8"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>文档标题<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">    文档内容......</div><div class="line">    <span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>注意：</p>
+<p><html lang="en"> 申明文档语言</html></p>
+<p><meta charset="utf-8"> 声明编码，中文否则会出现乱码。</p>
+<p>特点：<br>结构简洁，语法宽松。</p>
+<p>W3C验证地址 <a href="https://validator.w3.org/" target="_blank" rel="external">https://validator.w3.org/</a></p>
+<h3 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h3><h4 id="语义标签"><a href="#语义标签" class="headerlink" title="语义标签"></a>语义标签</h4><table>
+<thead>
+<tr>
+<th>标签</th>
+<th>解释</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>header</td>
+<td>定义了文档的头部区域</td>
+</tr>
+<tr>
+<td>nav</td>
+<td>定义导航链接的部分。</td>
+</tr>
+<tr>
+<td>section</td>
+<td>定义文档中的节（section、区段）。</td>
+</tr>
+<tr>
+<td>article</td>
+<td>定义页面独立的内容区域。</td>
+</tr>
+<tr>
+<td>aside</td>
+<td>定义页面的侧边栏内容。</td>
+</tr>
+<tr>
+<td>figure</td>
+<td>规定独立的流内容（图像、图表、照片、代码等等）。</td>
+</tr>
+<tr>
+<td>figcaption</td>
+<td>定义 figure 元素的标题</td>
+</tr>
+<tr>
+<td>dialog</td>
+<td>定义对话框，比如提示框</td>
+</tr>
+<tr>
+<td>footer</td>
+<td>定义 section 或 document 的页脚。</td>
+</tr>
+<tr>
+<td>—-</td>
+<td>—-</td>
+</tr>
+<tr>
+<td>bdi</td>
+<td>允许您设置一段文本，使其脱离其父元素的文本方向设置。</td>
+</tr>
+<tr>
+<td>command</td>
+<td>定义命令按钮，比如单选按钮、复选框或按钮</td>
+</tr>
+<tr>
+<td>details</td>
+<td>用于描述文档或文档某个部分的细节</td>
+</tr>
+<tr>
+<td>summary</td>
+<td>标签包含 details 元素的标题</td>
+</tr>
+<tr>
+<td>mark</td>
+<td>定义带有记号的文本。</td>
+</tr>
+<tr>
+<td>meter</td>
+<td>定义度量衡。仅用于已知最大和最小值的度量。</td>
+</tr>
+<tr>
+<td>progress</td>
+<td>定义任何类型的任务的进度。</td>
+</tr>
+<tr>
+<td>ruby</td>
+<td>定义 ruby 注释（中文注音或字符）。</td>
+</tr>
+<tr>
+<td>rt</td>
+<td>定义字符（中文注音或字符）的解释或发音。</td>
+</tr>
+<tr>
+<td>rp</td>
+<td>在 ruby 注释中使用，定义不支持 ruby 元素的浏览器所显示的内容。</td>
+</tr>
+<tr>
+<td>time</td>
+<td>定义日期或时间。</td>
+</tr>
+<tr>
+<td>wbr</td>
+<td>规定在文本中的何处适合添加换行符。</td>
+</tr>
+</tbody>
+</table>
+<p>经典网页布局传统版<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">    <span class="comment">&lt;!-- 头部 --&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"header"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"nav"</span>&gt;</span><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="comment">&lt;!-- 主体部分 --&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"main"</span>&gt;</span></div><div class="line">        <span class="comment">&lt;!-- 文章 --&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"article"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">        <span class="comment">&lt;!-- 侧边栏 --&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"aside"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="comment">&lt;!-- 底部 --&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"footer"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>经典网页布局HTML5版<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">	<span class="comment">&lt;!-- 头部 --&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">header</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">nav</span> <span class="attr">class</span>=<span class="string">"nav"</span>&gt;</span><span class="tag">&lt;/<span class="name">nav</span>&gt;</span></div><div class="line">	<span class="tag">&lt;/<span class="name">header</span>&gt;</span></div><div class="line">	<span class="comment">&lt;!-- 主体部分 --&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">main</span> <span class="attr">class</span>=<span class="string">"main"</span>&gt;</span></div><div class="line">		<span class="comment">&lt;!-- 文章 --&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">article</span>&gt;</span><span class="tag">&lt;/<span class="name">article</span>&gt;</span></div><div class="line">		<span class="comment">&lt;!-- 侧边栏 --&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">aside</span>&gt;</span><span class="tag">&lt;/<span class="name">aside</span>&gt;</span></div><div class="line">	<span class="tag">&lt;/<span class="name">main</span>&gt;</span></div><div class="line">	<span class="comment">&lt;!-- 底部 --&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">footer</span>&gt;</span><span class="tag">&lt;/<span class="name">footer</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<p>本质上新语义标签与div、span没有区别，只是其具有表意性。<br>使用时除了在HTML结构上需要注意外，其它和普通标签的使用无任何差别。<br>可以理解成&lt;div class=”nav”&gt; 相当于 &lt;nav&gt;,<strong>不要好奇，它只是一个标签！</strong><br><strong>注意：</strong>尽量避免全局使用header、footer、aside等语义标签。</p>
+<h4 id="兼容处理"><a href="#兼容处理" class="headerlink" title="兼容处理"></a>兼容处理</h4><p>越来越多的站点开始使用 HTML5 标签。但情况是还有很多人在使用IE6，IE7，IE8。</p>
+<p>在不支持HTML5新标签的浏览器里，会将这些新的标签解析成行内元素(inline)对待，</p>
+<p>所以我们只需要将其转换成块元素(block)即可使用，</p>
+<p>但是在IE9版本以下，并不能正常解析这些新标签，</p>
+<p>但是却可以识别通过document.createElement(‘tagName’)创建的自定义标签，</p>
+<p>于是我们的解决方案就是将HTML5的新标签全部通过document.createElement(‘tagName’)来创建一遍，</p>
+<p>这样IE低版本也能正常解析HTML5新标签了，</p>
+<p>在实际开发中我们更多采用的是通过检测IE浏览器的版本来加载第三方的一个JS库来解决兼容问题。</p>
+<p><strong>html5shiv</strong><br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!--[if lt IE 9]&gt;</span></div><div class="line">&lt;script type="text/javascript" src="js/html5shiv.js"&gt;&lt;/script&gt;</div><div class="line">&lt;![endif]--&gt;</div></pre></td></tr></table></figure></p>
+<p>下载地址 <a href="http://www.bootcdn.cn/html5shiv/" target="_blank" rel="external">http://www.bootcdn.cn/html5shiv/</a></p>
+<h4 id="案例练习"><a href="#案例练习" class="headerlink" title="案例练习"></a>案例练习</h4><p>博客文章</p>
+<h3 id="表单"><a href="#表单" class="headerlink" title="表单"></a>表单</h3><h4 id="输入类型"><a href="#输入类型" class="headerlink" title="输入类型"></a>输入类型</h4><p>HTML5 拥有多个新的表单输入类型。这些新特性提供了更好的输入控制和验证。<br>本章全面介绍这些新的输入类型：</p>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>email</td>
+<td>在提交表单时，会自动验证 email 域的值是否合法有效</td>
+</tr>
+<tr>
+<td>url</td>
+<td>定义输入URL字段,在提交表单时，会自动验证 url 域的值</td>
+</tr>
+<tr>
+<td>tel</td>
+<td>定义输入电话号码字段</td>
+</tr>
+<tr>
+<td>number</td>
+<td>定义一个数值输入域(限定):<br>max- 规定允许的最大值<br>min - 规定允许的最小值<br>step - 规定合法的数字间隔（如果 step=”3”，则合法的数是 -3,0,3,6 等）<br>value - 规定默认值</td>
+</tr>
+<tr>
+<td>search</td>
+<td>定义一个搜索字段 (类似站点搜索或者Google搜索) </td>
+</tr>
+<tr>
+<td>—-</td>
+<td>—-</td>
+</tr>
+<tr>
+<td>range</td>
+<td>定义一个不需要非常精确的数值（类似于滑块控制）:<br>max- 规定允许的最大值<br>min - 规定允许的最小值<br>step - 规定合法的数字间隔（如果 step=”3”，则合法的数是 -3,0,3,6 等）<br>value - 规定默认值</td>
+</tr>
+<tr>
+<td>color</td>
+<td>从拾色器中选择一个颜色</td>
+</tr>
+<tr>
+<td>time</td>
+<td>定义可输入时间控制器</td>
+</tr>
+<tr>
+<td>date</td>
+<td>定义一个时间控制器</td>
+</tr>
+<tr>
+<td>week</td>
+<td>定义周和年</td>
+</tr>
+<tr>
+<td>month</td>
+<td>定义月与年 </td>
+</tr>
+<tr>
+<td>datetime</td>
+<td>定义一个日期和时间控制器 兼容性差</td>
+</tr>
+<tr>
+<td>datetime-local</td>
+<td>定义一个日期和时间</td>
+</tr>
+</tbody>
+</table>
+<p>注意:并不是所有的主流浏览器都支持新的input类型，不过您已经可以在所有主流的浏览器中使用它们了。即使不被支持，仍然可以显示为常规的文本域。<br>部分类型是针对移动设备生效的，且具有一定的兼容性，在实际应用当中可选择性的使用。</p>
+<p><strong>虚拟键盘调用</strong><br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"txt_text"</span> <span class="attr">id</span>=<span class="string">"txt_text"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"number"</span> <span class="attr">name</span>=<span class="string">"txt_number"</span> <span class="attr">id</span>=<span class="string">"txt_number"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"email"</span> <span class="attr">name</span>=<span class="string">"txt_email"</span> <span class="attr">id</span>=<span class="string">"txt_email"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"tel"</span> <span class="attr">name</span>=<span class="string">"txt_tel"</span> <span class="attr">id</span>=<span class="string">"txt_tel"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"url"</span> <span class="attr">name</span>=<span class="string">"txt_url"</span> <span class="attr">id</span>=<span class="string">"txt_url"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"search"</span> <span class="attr">name</span>=<span class="string">"txt_search"</span> <span class="attr">id</span>=<span class="string">"txt_search"</span>&gt;</span> 在移动端虚拟键盘会有搜索按钮</div></pre></td></tr></table></figure></p>
+<h4 id="表单标签"><a href="#表单标签" class="headerlink" title="表单标签"></a>表单标签</h4><p>datalist  元素规定输入域的选项列表。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">list</span>=<span class="string">"browsers"</span>&gt;</span></div><div class="line"></div><div class="line"><span class="tag">&lt;<span class="name">datalist</span> <span class="attr">id</span>=<span class="string">"browsers"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"Internet Explorer"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"Firefox"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"Chrome"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"Opera"</span>&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"Safari"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">datalist</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>keygen 生成加密字符串  </p>
+<p>当提交表单时，会生成两个键，一个是私钥，一个公钥。<br>私钥（private key）存储于客户端，公钥（public key）则被发送到服务器。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">"keygen.do"</span> <span class="attr">method</span>=<span class="string">"get"</span>&gt;</span></div><div class="line">用户名: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"usr_name"</span>&gt;</span></div><div class="line">加密: <span class="tag">&lt;<span class="name">keygen</span> <span class="attr">name</span>=<span class="string">"security"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></div></pre></td></tr></table></figure>
+<p>output 元素用于不同类型的输出,不可当做数据提交  </p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">oninput</span>=<span class="string">"x.value=parseInt(a.value)+parseInt(b.value)"</span>&gt;</span>0</div><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"range"</span> <span class="attr">id</span>=<span class="string">"a"</span> <span class="attr">value</span>=<span class="string">"50"</span>&gt;</span>100 +</div><div class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"number"</span> <span class="attr">id</span>=<span class="string">"b"</span> <span class="attr">value</span>=<span class="string">"50"</span>&gt;</span>=</div><div class="line"><span class="tag">&lt;<span class="name">output</span> <span class="attr">name</span>=<span class="string">"x"</span> <span class="attr">for</span>=<span class="string">"a b"</span>&gt;</span><span class="tag">&lt;/<span class="name">output</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></div></pre></td></tr></table></figure>
+<h4 id="表单属性"><a href="#表单属性" class="headerlink" title="表单属性"></a>表单属性</h4><ul>
+<li><p>form</p>
+<ul>
+<li>autocomplete 设置整个表单是否开启自动完成 on|off</li>
+<li>novalidate 设置H5的表单校验是否工作 true 不工作  不加该属性代表校验</li>
+</ul>
+</li>
+<li><p>input:</p>
+<ul>
+<li>autocomplete 单独设置每个文本框的自动完成</li>
+<li>autofocus 设置当前文本域页面加载完了过后自动得到焦点</li>
+<li>list 作用就是指定当前文本框的自动完成列表的数据 datalist 在界面上是看不见的，只是用于定义数据列表的</li>
+<li>multiple 文本域的多选 </li>
+<li>pattern 设置文本框的匹配格式（正则）</li>
+<li>placeholder 文本框占位符</li>
+<li>required 限制当前input为必须的</li>
+<li>form 属性是让表单外的表单元素也可以跟随表单一起提交</li>
+</ul>
+</li>
+<li>submit:<ul>
+<li>form 在submit上重写表单的特定属性，当点击当前submit时会以当前值使用<ul>
+<li>formaction, </li>
+<li>formenctype,</li>
+<li>formmethod,</li>
+<li>formnovalidate,</li>
+<li>formtarget</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="表单事件"><a href="#表单事件" class="headerlink" title="表单事件"></a>表单事件</h4><ul>
+<li>oninput 用户输入内容时触发，可用于移动端输入字数统计</li>
+<li>oninvalid 验证不通过时触发，<ul>
+<li>setCustomValidity 设置自定义提示 (验证通过需要本身合法并且没有提示信息)</li>
+</ul>
+</li>
+</ul>
+<h4 id="案例练习-1"><a href="#案例练习-1" class="headerlink" title="案例练习"></a>案例练习</h4><p>学生档案<br><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">""</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">fieldset</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">legend</span>&gt;</span>学生档案<span class="tag">&lt;/<span class="name">legend</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">label</span>&gt;</span></div><div class="line">            姓名: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">pattern</span>=<span class="string">"&#123;6,10&#125;"</span> <span class="attr">name</span>=<span class="string">"username"</span> <span class="attr">placeholder</span>=<span class="string">"请输入姓名"</span> <span class="attr">id</span>=<span class="string">"username"</span> <span class="attr">required</span> <span class="attr">autofocus</span> &gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">label</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">label</span>&gt;</span></div><div class="line">            手机号码: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"mobile"</span> <span class="attr">placeholder</span>=<span class="string">"请输入手机号"</span> <span class="attr">required</span> <span class="attr">pattern</span>=<span class="string">"^1\d&#123;10&#125;$"</span>  &gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">label</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">label</span>&gt;</span></div><div class="line">            邮箱地址: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"email"</span> <span class="attr">name</span>=<span class="string">"email"</span> <span class="attr">placeholder</span>=<span class="string">"请输入邮箱地址"</span> <span class="attr">required</span>  &gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">label</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">label</span>&gt;</span></div><div class="line">            所属学院: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">name</span>=<span class="string">"course"</span> <span class="attr">list</span>=<span class="string">"course"</span> <span class="attr">placeholder</span>=<span class="string">"请输入所属学院"</span>  &gt;</span></div><div class="line">            <span class="tag">&lt;<span class="name">datalist</span> <span class="attr">id</span>=<span class="string">"course"</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"前端与移动开发"</span>&gt;</span><span class="tag">&lt;/<span class="name">option</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"PHP"</span>&gt;</span><span class="tag">&lt;/<span class="name">option</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"JAVA"</span>&gt;</span><span class="tag">&lt;/<span class="name">option</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"Android"</span>&gt;</span><span class="tag">&lt;/<span class="name">option</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"IOS"</span>&gt;</span><span class="tag">&lt;/<span class="name">option</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"UI设计"</span>&gt;</span><span class="tag">&lt;/<span class="name">option</span>&gt;</span></div><div class="line">                <span class="tag">&lt;<span class="name">option</span> <span class="attr">value</span>=<span class="string">"C++"</span>&gt;</span><span class="tag">&lt;/<span class="name">option</span>&gt;</span></div><div class="line">            <span class="tag">&lt;/<span class="name">datalist</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">label</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">label</span>&gt;</span></div><div class="line">            入学成绩: <span class="tag">&lt;<span class="name">input</span> <span class="attr">id</span>=<span class="string">"score"</span> <span class="attr">name</span>=<span class="string">"score"</span> <span class="attr">type</span>=<span class="string">"number"</span> <span class="attr">min</span>=<span class="string">"0"</span> <span class="attr">max</span>=<span class="string">"100"</span> <span class="attr">step</span>=<span class="string">"10"</span> <span class="attr">value</span>=<span class="string">"60"</span>/&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">label</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">label</span>&gt;</span></div><div class="line">            基础水平: <span class="tag">&lt;<span class="name">meter</span> <span class="attr">id</span>=<span class="string">"level"</span> <span class="attr">name</span>=<span class="string">"level"</span> <span class="attr">min</span>=<span class="string">"0"</span> <span class="attr">max</span>=<span class="string">"100"</span> <span class="attr">low</span>=<span class="string">"60"</span> <span class="attr">high</span>=<span class="string">"80"</span> <span class="attr">value</span>=<span class="string">"70"</span>&gt;</span><span class="tag">&lt;/<span class="name">meter</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">label</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">label</span>&gt;</span></div><div class="line">            入学日期: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"date"</span> <span class="attr">value</span>=<span class="string">"2016-07-03"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">label</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">label</span>&gt;</span></div><div class="line">            毕业时间: <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"date"</span> <span class="attr">value</span>=<span class="string">"2016-11-03"</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">label</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">label</span>&gt;</span></div><div class="line">            课程进度: <span class="tag">&lt;<span class="name">progress</span> <span class="attr">max</span>=<span class="string">"100"</span> <span class="attr">value</span>=<span class="string">"30"</span>&gt;</span><span class="tag">&lt;/<span class="name">progress</span>&gt;</span></div><div class="line">        <span class="tag">&lt;/<span class="name">label</span>&gt;</span></div><div class="line">        <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">value</span>=<span class="string">"保存"</span>/&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">fieldset</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line">    /*获取到姓名元素*/</div><div class="line">    var username = document.getElementById("username");</div><div class="line">    /*如果有提示内容 也会触发这个事件*/</div><div class="line">    username.oninvalid = function()&#123;</div><div class="line">        console.log('oninvalid');</div><div class="line">    &#125;;</div><div class="line"></div><div class="line">    /*动态的展示入学成绩的水平*/</div><div class="line">    /*获取到入学成绩这个元素*/</div><div class="line">    var scoreInput = document.getElementById('score');</div><div class="line">    /*水平元素*/</div><div class="line">    var levelMeter = document.getElementById('level');</div><div class="line"></div><div class="line">    /*监听score的值的改变*/</div><div class="line">    scoreInput.oninput = function()&#123;</div><div class="line">        /*怎么样让水平状态改变*/</div><div class="line">        levelMeter.value = this.value;</div><div class="line">    &#125;</div><div class="line"></div><div class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></div></pre></td></tr></table></figure></p>
+<h3 id="多媒体"><a href="#多媒体" class="headerlink" title="多媒体"></a>多媒体</h3><h4 id="音频"><a href="#音频" class="headerlink" title="音频"></a>音频</h4><ul>
+<li>定义音频播放组件</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">audio</span> <span class="attr">src</span>=<span class="string">"要播放的音频文件"</span>&gt;</span><span class="tag">&lt;/<span class="name">audio</span>&gt;</span></div></pre></td></tr></table></figure>
+<h4 id="视频"><a href="#视频" class="headerlink" title="视频"></a>视频</h4><ul>
+<li>定义播放视频组件</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">video</span> <span class="attr">src</span>=<span class="string">"要播放的视频文件"</span>&gt;</span><span class="tag">&lt;/<span class="name">video</span>&gt;</span></div></pre></td></tr></table></figure>
+<h4 id="旧版本浏览器提示"><a href="#旧版本浏览器提示" class="headerlink" title="旧版本浏览器提示"></a>旧版本浏览器提示</h4><ul>
+<li>如果HTML中遇到不能识别的标签，就会将该标签当做DIV(块级元素) </li>
+<li>那么video中的innerHTML也就会直接显示在界面上</li>
+<li>利用这个特点我们可以实现不支持video标签的浏览器提示</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="tag">&lt;<span class="name">video</span> <span class="attr">src</span>=<span class="string">"demo.mp4"</span>&gt;</span></div><div class="line">  <span class="comment">&lt;!-- 如果浏览器不识别video标签，以下内容可以直接显示在浏览器上 --&gt;</span></div><div class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>抱歉，您的浏览器不支持视频播放！<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">video</span>&gt;</span></div></pre></td></tr></table></figure>
+<h4 id="格式兼容"><a href="#格式兼容" class="headerlink" title="格式兼容"></a>格式兼容</h4><ul>
+<li>每个浏览器的音视频格式支持不同（版权问题）</li>
+<li>需要兼容更多的浏览器，可以通过定义多个<code>&lt;source&gt;</code>的方式实现</li>
+<li>html解析过程中会找其中第一个能认识的格式播放，一旦找到认识的视频格式，就不会再往后找了</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="comment">&lt;!-- 分析第一个source格式是否支持，如果支持则加载该文件，不支持继续往下解析 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">source</span> <span class="attr">src</span>=<span class="string">"See You Again.mp3"</span>/&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">source</span> <span class="attr">src</span>=<span class="string">"See You Again.wav"</span>/&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">source</span> <span class="attr">src</span>=<span class="string">"See You Again.ogg"</span>/&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>抱歉，您的浏览器不支持音频播放！<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div><div class="line"></div><div class="line"><span class="comment">&lt;!-- 分析第一个source格式是否支持，如果支持则加载该文件，不支持继续往下解析 --&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">source</span> <span class="attr">src</span>=<span class="string">"chrome.mp4"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">source</span> <span class="attr">src</span>=<span class="string">"chrome.ogv"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">source</span> <span class="attr">src</span>=<span class="string">"chrome.webm"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>抱歉，您的浏览器不支持视频播放！<span class="tag">&lt;/<span class="name">p</span>&gt;</span></div></pre></td></tr></table></figure>
+<ul>
+<li>因此不管是audio还是video都不要直接设置标签的src</li>
+</ul>
+<h4 id="多媒体属性"><a href="#多媒体属性" class="headerlink" title="多媒体属性"></a>多媒体属性</h4><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>controls</td>
+<td>决定是否显示控制菜单</td>
+</tr>
+<tr>
+<td>autoplay</td>
+<td>自动播放</td>
+</tr>
+<tr>
+<td>loop</td>
+<td>循环播放</td>
+</tr>
+<tr>
+<td>height/width</td>
+<td>定义播放器的宽高，只会在视频标签中生效</td>
+</tr>
+<tr>
+<td>preload</td>
+<td>预加载 是否在页面加载完成并且没有开始播放时就开始加载文件，如果有自动播放属性则该属性无意义</td>
+</tr>
+</tbody>
+</table>
+<h4 id="自定义控制栏"><a href="#自定义控制栏" class="headerlink" title="自定义控制栏"></a>自定义控制栏</h4><ol>
+<li>隐藏原生的控制菜单，也就是删除标签中的controls属性</li>
+<li>自己设计一套界面控制元素，比如播放按钮，音量控制开关之类</li>
+<li>为每个不同的控制元素注册对应的事件</li>
+<li>在事件中通过视频元素的API实现自定义播放器的效果</li>
+<li>具体的多媒体元素API表：</li>
+</ol>
+<h5 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h5><table>
+<thead>
+<tr>
+<th>方法</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>addTextTrack()</td>
+<td>向音频/视频添加新的文本轨道</td>
+</tr>
+<tr>
+<td>canPlayType()</td>
+<td>检测浏览器是否能播放指定的音频/视频类型</td>
+</tr>
+<tr>
+<td>load()</td>
+<td>重新加载音频/视频元素</td>
+</tr>
+<tr>
+<td>play()</td>
+<td>开始播放音频/视频</td>
+</tr>
+<tr>
+<td>pause()</td>
+<td>暂停当前播放的音频/视频</td>
+</tr>
+</tbody>
+</table>
+<h5 id="属性"><a href="#属性" class="headerlink" title="属性"></a>属性</h5><table>
+<thead>
+<tr>
+<th>属性</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>audioTracks</td>
+<td>返回表示可用音轨的 AudioTrackList 对象                 </td>
+</tr>
+<tr>
+<td>autoplay</td>
+<td>设置或返回是否在加载完成后随即播放音频/视频</td>
+</tr>
+<tr>
+<td>buffered</td>
+<td>返回表示音频/视频已缓冲部分的 TimeRanges 对象 </td>
+</tr>
+<tr>
+<td>controller</td>
+<td>返回表示音频/视频当前媒体控制器的 MediaController 对象</td>
+</tr>
+<tr>
+<td>controls</td>
+<td>设置或返回音频/视频是否显示控件（比如播放/暂停等）</td>
+</tr>
+<tr>
+<td>crossOrigin</td>
+<td>设置或返回音频/视频的 CORS 设置 </td>
+</tr>
+<tr>
+<td>currentSrc</td>
+<td>返回当前音频/视频的 URL</td>
+</tr>
+<tr>
+<td>currentTime</td>
+<td>设置或返回音频/视频中的当前播放位置（以秒计）</td>
+</tr>
+<tr>
+<td>defaultMuted</td>
+<td>设置或返回音频/视频默认是否静音</td>
+</tr>
+<tr>
+<td>defaultPlaybackRate</td>
+<td>设置或返回音频/视频的默认播放速度</td>
+</tr>
+<tr>
+<td>duration</td>
+<td>返回当前音频/视频的长度（以秒计）</td>
+</tr>
+<tr>
+<td>ended</td>
+<td>返回音频/视频的播放是否已结束</td>
+</tr>
+<tr>
+<td>error</td>
+<td>返回表示音频/视频错误状态的 MediaError 对象</td>
+</tr>
+<tr>
+<td>loop</td>
+<td>设置或返回音频/视频是否应在结束时重新播放</td>
+</tr>
+<tr>
+<td>mediaGroup</td>
+<td>设置或返回音频/视频所属的组合（用于连接多个音频/视频元素）</td>
+</tr>
+<tr>
+<td>muted</td>
+<td>设置或返回音频/视频是否静音</td>
+</tr>
+<tr>
+<td>networkState</td>
+<td>返回音频/视频的当前网络状态</td>
+</tr>
+<tr>
+<td>paused</td>
+<td>设置或返回音频/视频是否暂停</td>
+</tr>
+<tr>
+<td>playbackRate</td>
+<td>设置或返回音频/视频播放的速度</td>
+</tr>
+<tr>
+<td>played</td>
+<td>返回表示音频/视频已播放部分的 TimeRanges 对象</td>
+</tr>
+<tr>
+<td>preload</td>
+<td>设置或返回音频/视频是否应该在页面加载后进行加载</td>
+</tr>
+<tr>
+<td>readyState</td>
+<td>返回音频/视频当前的就绪状态</td>
+</tr>
+<tr>
+<td>seekable</td>
+<td>返回表示音频/视频可寻址部分的 TimeRanges 对象</td>
+</tr>
+<tr>
+<td>seeking</td>
+<td>返回用户是否正在音频/视频中进行查找</td>
+</tr>
+<tr>
+<td>src</td>
+<td>设置或返回音频/视频元素的当前来源</td>
+</tr>
+<tr>
+<td>startDate</td>
+<td>返回表示当前时间偏移的 Date 对象</td>
+</tr>
+<tr>
+<td>textTracks</td>
+<td>返回表示可用文本轨道的 TextTrackList 对象</td>
+</tr>
+<tr>
+<td>videoTracks</td>
+<td>返回表示可用视频轨道的 VideoTrackList 对象</td>
+</tr>
+<tr>
+<td>volume</td>
+<td>设置或返回音频/视频的音量</td>
+</tr>
+</tbody>
+</table>
+<h5 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h5><table>
+<thead>
+<tr>
+<th>事件</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>abort</td>
+<td>当音频/视频的加载已放弃时</td>
+</tr>
+<tr>
+<td>canplay</td>
+<td>当浏览器可以播放音频/视频时</td>
+</tr>
+<tr>
+<td>canplaythrough</td>
+<td>当浏览器可在不因缓冲而停顿的情况下进行播放时</td>
+</tr>
+<tr>
+<td>durationchange</td>
+<td>当音频/视频的时长已更改时</td>
+</tr>
+<tr>
+<td>emptied</td>
+<td>当目前的播放列表为空时</td>
+</tr>
+<tr>
+<td>ended</td>
+<td>当目前的播放列表已结束时</td>
+</tr>
+<tr>
+<td>error</td>
+<td>当在音频/视频加载期间发生错误时</td>
+</tr>
+<tr>
+<td>loadeddata</td>
+<td>当浏览器已加载音频/视频的当前帧时</td>
+</tr>
+<tr>
+<td>loadedmetadata</td>
+<td>当浏览器已加载音频/视频的元数据时</td>
+</tr>
+<tr>
+<td>loadstart</td>
+<td>当浏览器开始查找音频/视频时</td>
+</tr>
+<tr>
+<td>pause</td>
+<td>当音频/视频已暂停时</td>
+</tr>
+<tr>
+<td>play</td>
+<td>当音频/视频已开始或不再暂停时</td>
+</tr>
+<tr>
+<td>playing</td>
+<td>当音频/视频在已因缓冲而暂停或停止后已就绪时</td>
+</tr>
+<tr>
+<td>progress</td>
+<td>当浏览器正在下载音频/视频时</td>
+</tr>
+<tr>
+<td>ratechange</td>
+<td>当音频/视频的播放速度已更改时</td>
+</tr>
+<tr>
+<td>seeked</td>
+<td>当用户已移动/跳跃到音频/视频中的新位置时</td>
+</tr>
+<tr>
+<td>seeking</td>
+<td>当用户开始移动/跳跃到音频/视频中的新位置时</td>
+</tr>
+<tr>
+<td>stalled</td>
+<td>当浏览器尝试获取媒体数据，但数据不可用时</td>
+</tr>
+<tr>
+<td>suspend</td>
+<td>当浏览器刻意不获取媒体数据时</td>
+</tr>
+<tr>
+<td>timeupdate</td>
+<td>当目前的播放位置已更改时</td>
+</tr>
+<tr>
+<td>volumechange</td>
+<td>当音量已更改时</td>
+</tr>
+<tr>
+<td>waiting</td>
+<td>当视频由于需要缓冲下一帧而停止</td>
+</tr>
+</tbody>
+</table>
+<h3 id="DOM扩展"><a href="#DOM扩展" class="headerlink" title="DOM扩展"></a>DOM扩展</h3><h4 id="获取元素"><a href="#获取元素" class="headerlink" title="获取元素"></a>获取元素</h4><p>1、document.getElementsByClassName (‘class’) 通过类名获取元素，以类数组形式存在。</p>
+<p>2、document.querySelector(‘selector’) 通过CSS选择器获取元素，符合匹配条件的第1个元素。</p>
+<p>3、document.querySelectorAll(‘selector’) 通过CSS选择器获取元素，以类数组形式存在。</p>
+<h4 id="类名操作"><a href="#类名操作" class="headerlink" title="类名操作"></a>类名操作</h4><p>1、Node.classList.add(‘class’) 添加class</p>
+<p>2、Node.classList.remove(‘class’) 移除class</p>
+<p>3、Node.classList.toggle(‘class’) 切换class，有则移除，无则添加</p>
+<p>4、Node.classList.contains(‘class’) 检测是否存在class</p>
+<p>Node指一个有效的DOM节点，是一个通称。</p>
+<h4 id="自定义属性"><a href="#自定义属性" class="headerlink" title="自定义属性"></a>自定义属性</h4><p>在HTML5中我们可以自定义属性，其格式如下data-*=””，例如</p>
+<p>data-info=”我是自定义属性”，通过Node.dataset[‘info’] 我们便可以获取到自定义的属性值。</p>
+<p>Node.dataset是以类数组形式存在的</p>
+<p>当我们如下格式设置时，则需要以驼峰格式才能正确获取</p>
+<p>data-my-name=”itcast”，获取Node.dataset[‘myName’]</p>
+<h4 id="案例练习-2"><a href="#案例练习-2" class="headerlink" title="案例练习"></a>案例练习</h4><p>Tab切换</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div><div class="line">78</div><div class="line">79</div><div class="line">80</div><div class="line">81</div><div class="line">82</div><div class="line">83</div><div class="line">84</div><div class="line">85</div><div class="line">86</div><div class="line">87</div><div class="line">88</div><div class="line">89</div><div class="line">90</div><div class="line">91</div><div class="line">92</div><div class="line">93</div><div class="line">94</div><div class="line">95</div><div class="line">96</div><div class="line">97</div><div class="line">98</div><div class="line">99</div><div class="line">100</div><div class="line">101</div><div class="line">102</div><div class="line">103</div><div class="line">104</div><div class="line">105</div><div class="line">106</div><div class="line">107</div><div class="line">108</div><div class="line">109</div><div class="line">110</div><div class="line">111</div><div class="line">112</div><div class="line">113</div><div class="line">114</div><div class="line">115</div><div class="line">116</div><div class="line">117</div><div class="line">118</div><div class="line">119</div><div class="line">120</div><div class="line">121</div><div class="line">122</div><div class="line">123</div><div class="line">124</div><div class="line">125</div><div class="line">126</div><div class="line">127</div><div class="line">128</div><div class="line">129</div><div class="line">130</div><div class="line">131</div><div class="line">132</div><div class="line">133</div><div class="line">134</div><div class="line">135</div><div class="line">136</div><div class="line">137</div><div class="line">138</div><div class="line">139</div><div class="line">140</div><div class="line">141</div><div class="line">142</div><div class="line">143</div><div class="line">144</div><div class="line">145</div><div class="line">146</div><div class="line">147</div><div class="line">148</div><div class="line">149</div><div class="line">150</div><div class="line">151</div><div class="line">152</div><div class="line">153</div><div class="line">154</div><div class="line">155</div><div class="line">156</div><div class="line">157</div><div class="line">158</div><div class="line">159</div><div class="line">160</div><div class="line">161</div><div class="line">162</div><div class="line">163</div><div class="line">164</div></pre></td><td class="code"><pre><div class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>Tab 标签<span class="tag">&lt;/<span class="name">title</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></div><div class="line">		body &#123;</div><div class="line">			margin: 0;</div><div class="line">			padding: 0;</div><div class="line">			background-color: #F7F7F7;</div><div class="line">		&#125;</div><div class="line">	</div><div class="line">		.tabs &#123;</div><div class="line">			width: 400px;</div><div class="line">			margin: 30px auto;</div><div class="line">			background-color: #FFF;</div><div class="line">			border: 1px solid #C0DCC0;</div><div class="line">			box-sizing: border-box;</div><div class="line">		&#125;</div><div class="line"></div><div class="line">		.tabs nav &#123;</div><div class="line">			height: 40px;</div><div class="line">			text-align: center;</div><div class="line">			line-height: 40px;</div><div class="line">			overflow: hidden;</div><div class="line">			background-color: #C0DCC0;</div><div class="line">			display: flex;</div><div class="line">		&#125;</div><div class="line"></div><div class="line">		nav a &#123;</div><div class="line">			display: block;</div><div class="line">			width: 100px;</div><div class="line">			border-right: 1px solid #FFF;</div><div class="line">			color: #000;</div><div class="line">			text-decoration: none;</div><div class="line">		&#125;</div><div class="line"></div><div class="line">		nav a:last-child &#123;</div><div class="line">			border-right: 0 none;</div><div class="line">		&#125;</div><div class="line"></div><div class="line">		nav a.active &#123;</div><div class="line">			background-color: #9BAF9B;</div><div class="line">		&#125;</div><div class="line"></div><div class="line">		.cont &#123;</div><div class="line">			overflow: hidden;</div><div class="line">			display: none;</div><div class="line">		&#125;</div><div class="line"></div><div class="line">		.cont ol &#123;</div><div class="line">			line-height: 30px;</div><div class="line">		&#125;</div><div class="line"></div><div class="line">    <span class="tag">&lt;/<span class="name">style</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></div><div class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></div><div class="line">	<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"tabs"</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">nav</span>&gt;</span></div><div class="line">			<span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"javascript:;"</span> <span class="attr">data-cont</span>=<span class="string">"local"</span>&gt;</span>国内新闻<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line">			<span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"javascript:;"</span> <span class="attr">data-cont</span>=<span class="string">"global"</span>&gt;</span>国际新闻<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line">			<span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"javascript:;"</span> <span class="attr">data-cont</span>=<span class="string">"sports"</span>&gt;</span>体育新闻<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line">			<span class="tag">&lt;<span class="name">a</span> <span class="attr">href</span>=<span class="string">"javascript:;"</span> <span class="attr">data-cont</span>=<span class="string">"funny"</span>&gt;</span>娱乐新闻<span class="tag">&lt;/<span class="name">a</span>&gt;</span></div><div class="line">		<span class="tag">&lt;/<span class="name">nav</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">section</span> <span class="attr">class</span>=<span class="string">"cont"</span> <span class="attr">id</span>=<span class="string">"local"</span>&gt;</span></div><div class="line">			<span class="tag">&lt;<span class="name">ol</span>&gt;</span></div><div class="line">				<span class="tag">&lt;<span class="name">li</span>&gt;</span>河感在生矿难，死伤在全10<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">				<span class="tag">&lt;<span class="name">li</span>&gt;</span>禽流感在感在广1处继续蔓延，温家宝指示<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">				<span class="tag">&lt;<span class="name">li</span>&gt;</span>南方大旱，农作物减产绝收面积上亩<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">				<span class="tag">&lt;<span class="name">li</span>&gt;</span>猪流感在广在全国暴发<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">				<span class="tag">&lt;<span class="name">li</span>&gt;</span>禽流感在全国多处继续蔓延，温家宝指示<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">				<span class="tag">&lt;<span class="name">li</span>&gt;</span>南方大旱，农作物减产绝收面积上亩<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">				<span class="tag">&lt;<span class="name">li</span>&gt;</span>猪流感在广东群体性暴发<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">			<span class="tag">&lt;/<span class="name">ol</span>&gt;</span></div><div class="line">		<span class="tag">&lt;/<span class="name">section</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">section</span> <span class="attr">class</span>=<span class="string">"cont"</span> <span class="attr">id</span>=<span class="string">"global"</span>&gt;</span></div><div class="line">			<span class="tag">&lt;<span class="name">ol</span>&gt;</span></div><div class="line">				<span class="tag">&lt;<span class="name">li</span>&gt;</span>河南再次发生矿难，死伤人数超过100<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">				<span class="tag">&lt;<span class="name">li</span>&gt;</span>禽流感次发生蔓延，温家宝指示<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">				<span class="tag">&lt;<span class="name">li</span>&gt;</span>南方大旱，农作物减产绝收面积上亩<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">				<span class="tag">&lt;<span class="name">li</span>&gt;</span>猪流感在广减产绝收发<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">				<span class="tag">&lt;<span class="name">li</span>&gt;</span>禽流感在全国多作物减产绝收面积上亩<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">				<span class="tag">&lt;<span class="name">li</span>&gt;</span>猪流感在广东群体性暴发<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">			<span class="tag">&lt;/<span class="name">ol</span>&gt;</span></div><div class="line">		<span class="tag">&lt;/<span class="name">section</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">section</span> <span class="attr">class</span>=<span class="string">"cont"</span> <span class="attr">id</span>=<span class="string">"sports"</span>&gt;</span></div><div class="line">			<span class="tag">&lt;<span class="name">ol</span>&gt;</span></div><div class="line">				<span class="tag">&lt;<span class="name">li</span>&gt;</span>河南再次发生矿难，死伤人数超过100<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">				<span class="tag">&lt;<span class="name">li</span>&gt;</span>禽流感在全国多处农作物农延，温家宝指示<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">				<span class="tag">&lt;<span class="name">li</span>&gt;</span>南方大旱，农作物减产绝收面积上亩<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">				<span class="tag">&lt;<span class="name">li</span>&gt;</span>猪流感在广东群体性暴发<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">				<span class="tag">&lt;<span class="name">li</span>&gt;</span>禽流感在全农作物继续蔓延，温家宝指示<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">				<span class="tag">&lt;<span class="name">li</span>&gt;</span>南方大农作物减产绝收面积上亩<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">				<span class="tag">&lt;<span class="name">li</span>&gt;</span>猪流感在广东群体性暴发<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">			<span class="tag">&lt;/<span class="name">ol</span>&gt;</span></div><div class="line">		<span class="tag">&lt;/<span class="name">section</span>&gt;</span></div><div class="line">		<span class="tag">&lt;<span class="name">section</span> <span class="attr">class</span>=<span class="string">"cont"</span> <span class="attr">id</span>=<span class="string">"funny"</span>&gt;</span></div><div class="line">			<span class="tag">&lt;<span class="name">ol</span>&gt;</span></div><div class="line">				<span class="tag">&lt;<span class="name">li</span>&gt;</span>河南再次发生矿难，死伤人数超过101 <span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">				<span class="tag">&lt;<span class="name">li</span>&gt;</span>禽流感在全国多处农作物农延，温家宝指示<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">				<span class="tag">&lt;<span class="name">li</span>&gt;</span>南方大旱，农作物减产绝收面积上亩<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">				<span class="tag">&lt;<span class="name">li</span>&gt;</span>猪流感在广东群体性暴发<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">				<span class="tag">&lt;<span class="name">li</span>&gt;</span>禽流感在全农作物继续蔓延，温家宝指示<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">				<span class="tag">&lt;<span class="name">li</span>&gt;</span>南方大农作物减产绝收面积上亩<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">				<span class="tag">&lt;<span class="name">li</span>&gt;</span>猪流感在广东群体性暴发<span class="tag">&lt;/<span class="name">li</span>&gt;</span></div><div class="line">			<span class="tag">&lt;/<span class="name">ol</span>&gt;</span></div><div class="line">		<span class="tag">&lt;/<span class="name">section</span>&gt;</span></div><div class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></div><div class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></div><div class="line">		/*</div><div class="line">		* 1.页面初始化的时候可以指定当前选择的页签</div><div class="line">		* 2.点击页签的时候可以做到样式的切换</div><div class="line">		* 3.点击的时候可以让对应的内容  做对应的显示</div><div class="line">		* */</div><div class="line"></div><div class="line">		/*function tab(index)&#123;</div><div class="line">			/!*---*!/</div><div class="line">		&#125;</div><div class="line">		tab(0);*/</div><div class="line"></div><div class="line">		(function(index)&#123;</div><div class="line"></div><div class="line">			var tabList = document.querySelectorAll('nav &gt; a');</div><div class="line"></div><div class="line">			var sectionList = document.querySelectorAll('section');</div><div class="line"></div><div class="line">			for(var i = 0 ; i &lt; tabList.length ; i++)&#123;</div><div class="line"></div><div class="line">				var tab = tabList[i];</div><div class="line"></div><div class="line">				/*1.页面初始化的时候可以指定当前选择的页签*/</div><div class="line">				tab.classList.remove('active');</div><div class="line"></div><div class="line">				if(index == i)&#123;</div><div class="line">					tab.classList.add('active');</div><div class="line">					document.querySelector('#'+tab.dataset['cont']).style.display = "block";</div><div class="line">				&#125;</div><div class="line"></div><div class="line">				/*2.点击页签的时候可以做到样式的切换*/</div><div class="line">				tab.onclick = function()&#123;</div><div class="line"></div><div class="line">					if(this.classList.contains('active'))&#123;</div><div class="line">						return false;</div><div class="line">					&#125;</div><div class="line"></div><div class="line">					for(var j = 0 ; j &lt; tabList.length ; j++)&#123;</div><div class="line">						tabList[j].classList.remove('active');</div><div class="line">					&#125;</div><div class="line"></div><div class="line">					this.classList.add('active');</div><div class="line"></div><div class="line">					for(var k = 0 ; k &lt; sectionList.length ; k ++)&#123;</div><div class="line">						sectionList[k].style.display = 'none';</div><div class="line">					&#125;</div><div class="line"></div><div class="line">					document.querySelector('#'+this.dataset['cont']).style.display = 'block';</div><div class="line">				&#125;</div><div class="line">			&#125;</div><div class="line"></div><div class="line">		&#125;)(0);</div><div class="line"></div><div class="line">	<span class="tag">&lt;/<span class="name">script</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></div><div class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></div></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/12/22/关于H5/" data-id="cix01k5si00065cr7ia9vjgx8" class="article-share-link">Delen</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-js基础" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/12/22/js基础/" class="article-date">
+  <time datetime="2016-12-22T06:38:34.000Z" itemprop="datePublished">2016-12-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/12/22/js基础/">js基础</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h2><p>JavaScript是脚本语言,是解析型语言，是弱类型语言，是动态型语言。</p>
+<p>JavaScript包括ECMAScript(标准)，DOM(文档对象模型)，BOM(浏览器文档对象)。</p>
+<h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><p>1.区分大小写。</p>
+<p>2.JavaScript是弱类型语言，声明变量可全部用var.</p>
+<p>3.字符串可以用单引号也可以用双引号.</p>
+<p>4.每一行代码结束用分号’;’</p>
+<p>HTML:用来展示页面的</p>
+<p>CSS:用来美化页面的</p>
+<p>JavaScript:实现页面交互的</p>
+<p>JavaScript:ECMAScript(标准),DOM(文档对象模型),BOM()</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/12/22/js基础/" data-id="cix01k5s600045cr7120vflwl" class="article-share-link">Delen</a>
+      
+      
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+  <nav id="page-nav">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">__('next') &raquo;</a>
+  </nav>
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archieven</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recente berichten</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/12/22/面向对象07/">面向对象07</a>
+          </li>
+        
+          <li>
+            <a href="/2016/12/22/面向对象06/">面向对象06</a>
+          </li>
+        
+          <li>
+            <a href="/2016/12/22/面向对象05/">面向对象05</a>
+          </li>
+        
+          <li>
+            <a href="/2016/12/22/面向对象04/">面向对象04</a>
+          </li>
+        
+          <li>
+            <a href="/2016/12/22/面向对象03/">面向对象03</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

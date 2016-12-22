@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>面向对象02 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="原型的概念
+概念：所谓原型就是指 函数的prototype属性所引用的对象 
+
+只要定义一个函数，那么就会创建其原型
+由上述函数创建出来的所有对象，都可以直接访问到原型上的成员
+
+
+作用：实现同类对象之间的数据共享。
+
+获取原型方式
+
+通过函数：.prototype
+通过对象：.__proto__
+注意：已__开头和结尾的属性均为非标准属性; 原型 默认具有constructor属性，引用的就是其">
+<meta property="og:type" content="article">
+<meta property="og:title" content="面向对象02">
+<meta property="og:url" content="http://yoursite.com/2016/12/22/面向对象02/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="原型的概念
+概念：所谓原型就是指 函数的prototype属性所引用的对象 
+
+只要定义一个函数，那么就会创建其原型
+由上述函数创建出来的所有对象，都可以直接访问到原型上的成员
+
+
+作用：实现同类对象之间的数据共享。
+
+获取原型方式
+
+通过函数：.prototype
+通过对象：.__proto__
+注意：已__开头和结尾的属性均为非标准属性; 原型 默认具有constructor属性，引用的就是其">
+<meta property="og:updated_time" content="2016-12-22T06:52:49.480Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="面向对象02">
+<meta name="twitter:description" content="原型的概念
+概念：所谓原型就是指 函数的prototype属性所引用的对象 
+
+只要定义一个函数，那么就会创建其原型
+由上述函数创建出来的所有对象，都可以直接访问到原型上的成员
+
+
+作用：实现同类对象之间的数据共享。
+
+获取原型方式
+
+通过函数：.prototype
+通过对象：.__proto__
+注意：已__开头和结尾的属性均为非标准属性; 原型 默认具有constructor属性，引用的就是其">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Zoeken"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-面向对象02" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/12/22/面向对象02/" class="article-date">
+  <time datetime="2016-12-22T06:51:59.000Z" itemprop="datePublished">2016-12-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      面向对象02
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="原型的概念"><a href="#原型的概念" class="headerlink" title="原型的概念"></a>原型的概念</h3><ol>
+<li><p>概念：所谓原型就是指 函数的prototype属性所引用的对象 </p>
+<ul>
+<li>只要定义一个函数，那么就会创建其原型</li>
+<li>由上述函数创建出来的所有对象，都可以直接访问到原型上的成员</li>
+</ul>
+</li>
+<li><p>作用：实现同类对象之间的数据共享。</p>
+</li>
+<li><p>获取原型方式</p>
+<ul>
+<li>通过函数：<fnname>.prototype</fnname></li>
+<li>通过对象：<objname>.__proto__</objname></li>
+<li>注意：已__开头和结尾的属性均为非标准属性; <pre><code>原型 默认具有constructor属性，引用的就是其构造函数
+</code></pre></li>
+</ul>
+</li>
+<li><p>原型特性：</p>
+<ul>
+<li><p>动态性</p>
+<ul>
+<li>在已有的原型上扩展成员，直接反映到已创建出来的对象上。</li>
+<li>如果置换了已有的原型，那么会反映到后面新创建的对象，而不会影响之前创建的对象</li>
+</ul>
+</li>
+<li><p>唯一性</p>
+<ul>
+<li>由同一个构造函数创建出来的所有对象，都共享一个原型。</li>
+</ul>
+</li>
+<li><p>不可变性</p>
+<ul>
+<li>不能通过对象来修改原型上的成员</li>
+</ul>
+</li>
+<li><p>共享性</p>
+<ul>
+<li>所有的对象都可以直接访问其原型上的成员</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>组合方式创建对象</p>
+<ul>
+<li>组合原型和构造函数一起来创建对象</li>
+<li>将私有的属性写在构造函数内</li>
+<li>将共有的属性或行为写到其原型上</li>
+</ul>
+</li>
+</ol>
+<h3 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h3><ol>
+<li><p>注意：其他面向对象语言 C# Java swift 类与类之间继承</p>
+<pre><code>而在js中，是对象与对象之间的继承
+</code></pre></li>
+<li><p>概念：就是指 一个对象有权去访问另一个对象上的成员（属性和方法）</p>
+</li>
+<li><p>继承的实现</p>
+<ul>
+<li>原型式继承<br>  a: 在原有的原型上扩展<br>  b: 置换原型</li>
+<li>混入式：将要继承的对象上的所有成员拷贝一份，添加到本身。</li>
+</ul>
+</li>
+<li><p>Object.create方法</p>
+<ul>
+<li>实现原型式继承（通过置换原型方法）</li>
+<li>语法：</li>
+</ul>
+</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> newObj = <span class="built_in">Object</span>.create(parent);</div></pre></td></tr></table></figure>
+<ol>
+<li><p>相关结论：</p>
+<ul>
+<li>Object.prototype的原型为null</li>
+<li>默认 原型对象  的  原型为Object.prototype</li>
+</ul>
+</li>
+<li><p>属性搜索原则：当访问对象的某个属性时，</p>
+<ul>
+<li>首先，在对象本身上查找，如果找到就返回值，并停止查找；</li>
+<li>如果没有找到就向其原型对象上查找，如果找到就返回值，并停止查找；</li>
+<li>如果在没有找到，就继续向其原型的原型对象上查找，直到Object.prototype</li>
+<li>此时如果找到就返回值，否则值为undefined。</li>
+</ul>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/12/22/面向对象02/" data-id="cix01k5sl00075cr70cmqr47x" class="article-share-link">Delen</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/12/22/面向对象03/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Nieuwer</strong>
+      <div class="article-nav-title">
+        
+          面向对象03
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/12/22/面向对象01/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ouder</strong>
+      <div class="article-nav-title">面向对象01</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archieven</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recente berichten</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/12/22/面向对象07/">面向对象07</a>
+          </li>
+        
+          <li>
+            <a href="/2016/12/22/面向对象06/">面向对象06</a>
+          </li>
+        
+          <li>
+            <a href="/2016/12/22/面向对象05/">面向对象05</a>
+          </li>
+        
+          <li>
+            <a href="/2016/12/22/面向对象04/">面向对象04</a>
+          </li>
+        
+          <li>
+            <a href="/2016/12/22/面向对象03/">面向对象03</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>

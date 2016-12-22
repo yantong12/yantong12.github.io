@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>面向对象03 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="原型链的概念
+
+所谓原型链 就是指 从一个对象到Object.prototype之间存在一条体现继承层次关系的链式结构，这个结构被称为对象的原型链。
+
+本质：链上的每一个对象都是通过__proto__属性连接起来的。
+
+
+
+绘制原型链
+
+先简写对象的原型链
+
+将上述原型链上的所有对象绘制在图形上。并且将和原型链相关的属性添加到对象上。
+
+给对象的每一个属性确定指向
+
+如果在图形上的每一个对象的属">
+<meta property="og:type" content="article">
+<meta property="og:title" content="面向对象03">
+<meta property="og:url" content="http://yoursite.com/2016/12/22/面向对象03/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="原型链的概念
+
+所谓原型链 就是指 从一个对象到Object.prototype之间存在一条体现继承层次关系的链式结构，这个结构被称为对象的原型链。
+
+本质：链上的每一个对象都是通过__proto__属性连接起来的。
+
+
+
+绘制原型链
+
+先简写对象的原型链
+
+将上述原型链上的所有对象绘制在图形上。并且将和原型链相关的属性添加到对象上。
+
+给对象的每一个属性确定指向
+
+如果在图形上的每一个对象的属">
+<meta property="og:updated_time" content="2016-12-22T06:53:35.508Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="面向对象03">
+<meta name="twitter:description" content="原型链的概念
+
+所谓原型链 就是指 从一个对象到Object.prototype之间存在一条体现继承层次关系的链式结构，这个结构被称为对象的原型链。
+
+本质：链上的每一个对象都是通过__proto__属性连接起来的。
+
+
+
+绘制原型链
+
+先简写对象的原型链
+
+将上述原型链上的所有对象绘制在图形上。并且将和原型链相关的属性添加到对象上。
+
+给对象的每一个属性确定指向
+
+如果在图形上的每一个对象的属">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Zoeken"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-面向对象03" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/12/22/面向对象03/" class="article-date">
+  <time datetime="2016-12-22T06:52:59.000Z" itemprop="datePublished">2016-12-22</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      面向对象03
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ol>
+<li><p>原型链的概念</p>
+<ul>
+<li><p>所谓原型链 就是指 从一个对象到Object.prototype之间存在一条体现继承层次关系的链式结构，这个结构被称为对象的原型链。</p>
+</li>
+<li><p>本质：链上的每一个对象都是通过__proto__属性连接起来的。</p>
+</li>
+</ul>
+</li>
+<li><p>绘制原型链</p>
+<ul>
+<li><p>先简写对象的原型链</p>
+</li>
+<li><p>将上述原型链上的所有对象绘制在图形上。并且将和原型链相关的属性添加到对象上。</p>
+</li>
+<li><p>给对象的每一个属性确定指向</p>
+</li>
+<li><p>如果在图形上的每一个对象的属性都有正确指向，说明绘制完成。</p>
+</li>
+</ul>
+</li>
+<li><p>Object.prototype 的方法简介</p>
+<ol>
+<li><p>hasOwnProperty</p>
+<ul>
+<li>has 有</li>
+<li>own 自己的</li>
+<li>property 属性</li>
+<li>语法：obj.hasOwnProperty(“propName”)</li>
+<li>用来判断指定属性是否为对象自身的，而不是继承过来的;如果是自身的就返回true，<br>否则返回false</li>
+</ul>
+</li>
+<li><p>isPrototypeOf</p>
+<ul>
+<li>is 是</li>
+<li>Prototype 原型</li>
+<li>of 的</li>
+<li>obj1.isPrototypeOf(obj2)</li>
+<li>用来判断obj1 对象 是否为 obj2对象 的原型；如果是，就返回true，否则返回false。</li>
+</ul>
+</li>
+<li><p>propertyIsEnumerable</p>
+<ul>
+<li>property 属性</li>
+<li>is 是</li>
+<li>Enumerable 可枚举的 可以使用for in遍历出来的属性</li>
+<li>obj.propertyIsEnumerable(‘propName’)</li>
+<li>hasOwnProperty升级版：</li>
+<li>满足这2个条件返回true，否则返回false<ul>
+<li>指定的属性必须是对象本身的</li>
+<li>该属性必须可枚举</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+</li>
+<li><p>装箱 与 拆箱</p>
+<ul>
+<li>将基本数据类型 装换为 复合数据类型，这个过程被称为 装箱</li>
+<li>将复合数据类型 装换为 基本数据类型，这个过程被称为 拆箱</li>
+</ul>
+</li>
+<li><p>强调几点</p>
+<ul>
+<li><p>默认原型对象才具有constructor属性</p>
+</li>
+<li><p>只有函数具有prototype属性（除了Function.prototype）</p>
+</li>
+<li><p>任意的对象都具有__proto__属性</p>
+</li>
+</ul>
+</li>
+<li><p>instanceof介绍</p>
+<ul>
+<li><p>obj instanceof constructor </p>
+</li>
+<li><p>规则：如果constructor 的原型 出现在 obj 的原型链上的话，表达式返回值为true，否则false。</p>
+</li>
+</ul>
+</li>
+<li><p>Function</p>
+<ul>
+<li><p>声明式</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</div><div class="line">	</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>表达式</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">fnName();</div><div class="line"><span class="keyword">var</span> fnName = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;&#125;;</div></pre></td></tr></table></figure>
+</li>
+<li><p>构造函数方式    </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> fn = <span class="keyword">new</span> <span class="built_in">Function</span>(<span class="string">"arg1"</span>, <span class="string">"arg2"</span>, <span class="string">"arg3"</span>, ...<span class="string">"argN"</span>, <span class="string">"body"</span>);</div></pre></td></tr></table></figure>
+<ul>
+<li>“arg1”, “arg2”, “arg3”, …”argN” 为生成函数的形参列表，且为可选的参数列表</li>
+<li>“body” 为生成函数的函数体部分</li>
+<li>如果不给构造函数传参数的话，就会创建一个没有形参列表也没有函数体实现的函数。</li>
+<li>如果只传入一个参数，那么这个参数值会交给”body”形参。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>eval 与 Function</p>
+<ul>
+<li><p>共同点</p>
+<ul>
+<li>都可以将一个字符串当做一段js代码来执行。</li>
+</ul>
+</li>
+<li><p>eval 具有作用域安全问题，有可能污染变量，而Function并不会。</p>
+</li>
+<li>可以肆意在全局上执行一段字符串代码，会造成网站不安全。</li>
+</ul>
+</li>
+<li><p>两个概念</p>
+<ul>
+<li>函数对象：在绘制函数的原型链的时候，将函数称为 函数对象；</li>
+<li>除了函数，都称为 普通对象。</li>
+</ul>
+</li>
+<li><p>函数相关属性</p>
+<ul>
+<li><p>caller: 返回调用当前函数的函数</p>
+<ul>
+<li>所谓函数调用函数 就是指在函数体内部调用其他函数</li>
+</ul>
+</li>
+<li><p>length: 记录的是形参的个数</p>
+</li>
+<li><p>name: 记录函数的名字</p>
+</li>
+</ul>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/12/22/面向对象03/" data-id="cix01k5t100095cr7gfbcm6ze" class="article-share-link">Delen</a>
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/12/22/面向对象04/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Nieuwer</strong>
+      <div class="article-nav-title">
+        
+          面向对象04
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/12/22/面向对象02/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ouder</strong>
+      <div class="article-nav-title">面向对象02</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+
+  
+    
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archieven</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/12/">December 2016</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recente berichten</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2016/12/22/面向对象07/">面向对象07</a>
+          </li>
+        
+          <li>
+            <a href="/2016/12/22/面向对象06/">面向对象06</a>
+          </li>
+        
+          <li>
+            <a href="/2016/12/22/面向对象05/">面向对象05</a>
+          </li>
+        
+          <li>
+            <a href="/2016/12/22/面向对象04/">面向对象04</a>
+          </li>
+        
+          <li>
+            <a href="/2016/12/22/面向对象03/">面向对象03</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2016 John Doe<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
